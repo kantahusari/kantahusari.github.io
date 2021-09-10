@@ -1,0 +1,90 @@
+.container {
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  left: 0;
+  top: 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #3e5985;
+  color: white;
+  /* transition: 10s ease-in-out; */
+  transition: 0.9s;
+}
+
+.Skills {
+  width: fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 1px solid white; */
+}
+
+.caticon:hover {
+  cursor: pointer;
+}
+
+.catimage {
+  margin-left: 35%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.showRoom {
+  margin-top: 15px;
+  text-align: center;
+}
+
+@keyframes fade_out_show {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.Skillcont {
+  width: fit-content;
+  height: fit-content;
+  /* margin-left: 150px; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 5px;
+  /* display: block; */
+  /* border: 1px solid white; */
+}
+
+.skillname {
+  text-align: left;
+  padding: 2px;
+  /* border: 1px solid white; */
+}
+
+.skillouter {
+  /* width: 350px; */
+  /* width: 450%; */
+  border: 1px solid white;
+}
+
+.htmlperfill {
+  padding: 4px;
+  text-align: right;
+  border: 1px solid white;
+  background-color: #a3b6d3;
+  color: #1f2c42;
+}
