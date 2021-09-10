@@ -27,15 +27,6 @@ import axios from 'axios'
 
 export default function App() {
   return (
-    // <Router>
-    //   <Switch>
-    //     <Route exact path='/' component={Home} />
-    //     <Route exact path='/Resume' component={Resume} />
-    //     <Route exact path='/Services' component={Services} />
-    //     <Redirect to="/" />
-    //   </Switch>
-    // </Router>
-    // <HashRouter basename="/">
     <HashRouter basename="/">
       <Switch>
         <Route exact path='/' component={Home} />
