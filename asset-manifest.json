@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.0050cefd.chunk.css",
-    "main.js": "/static/js/main.8e31d112.chunk.js",
-    "main.js.map": "/static/js/main.8e31d112.chunk.js.map",
+    "main.js": "/static/js/main.26a81971.chunk.js",
+    "main.js.map": "/static/js/main.26a81971.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2b4e631f.js",
     "runtime-main.js.map": "/static/js/runtime-main.2b4e631f.js.map",
     "static/js/2.760b42df.chunk.js": "/static/js/2.760b42df.chunk.js",
@@ -19,7 +19,7 @@
     "static/media/Design.0f3de51e.png": "/static/media/Design.0f3de51e.png",
     "static/media/DevOps.c7a162f3.png": "/static/media/DevOps.c7a162f3.png",
     "static/media/Framework.0f329d5f.png": "/static/media/Framework.0f329d5f.png",
-    "static/media/September.3eb2c8fd.pdf": "/static/media/September.3eb2c8fd.pdf",
+    "static/media/KantaHusari_Resume.4a9d54e0.pdf": "/static/media/KantaHusari_Resume.4a9d54e0.pdf",
     "static/media/Server.54ae4fc7.png": "/static/media/Server.54ae4fc7.png",
     "static/media/achievement.c4ff9e5d.png": "/static/media/achievement.c4ff9e5d.png",
     "static/media/calendar.6cc9a4e3.png": "/static/media/calendar.6cc9a4e3.png",
@@ -34,6 +34,6 @@
     "static/js/runtime-main.2b4e631f.js",
     "static/js/2.760b42df.chunk.js",
     "static/css/main.0050cefd.chunk.css",
-    "static/js/main.8e31d112.chunk.js"
+    "static/js/main.26a81971.chunk.js"
   ]
 }
