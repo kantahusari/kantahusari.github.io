@@ -19,7 +19,7 @@ import Experience from "../../Resources/experience.png"
 import Education from "../../Resources/education.png"
 import Calendar from "../../Resources/calendar.png"
 import Achievement from "../../Resources/achievement.png"
-import ResumePDF from "../../Resources/September.pdf"
+import ResumePDF from "../../Resources/KantaHusari_Resume.pdf"
 
 export default function Resume() {
 
