@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b20d0022.chunk.css",
+    "main.js": "/static/js/main.461a7d77.chunk.js",
+    "main.js.map": "/static/js/main.461a7d77.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c4f1af6a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c4f1af6a.js.map",
+    "static/js/2.cddc436f.chunk.js": "/static/js/2.cddc436f.chunk.js",
+    "static/js/2.cddc436f.chunk.js.map": "/static/js/2.cddc436f.chunk.js.map",
+    "static/js/3.65eba2de.chunk.js": "/static/js/3.65eba2de.chunk.js",
+    "static/js/3.65eba2de.chunk.js.map": "/static/js/3.65eba2de.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.b20d0022.chunk.css.map": "/static/css/main.b20d0022.chunk.css.map",
+    "static/js/2.cddc436f.chunk.js.LICENSE.txt": "/static/js/2.cddc436f.chunk.js.LICENSE.txt",
+    "static/media/AshyadLogo.b666b8fa.png": "/static/media/AshyadLogo.b666b8fa.png",
+    "static/media/BabTuma.1131e63b.png": "/static/media/BabTuma.1131e63b.png",
+    "static/media/Burger.f0e97d7b.png": "/static/media/Burger.f0e97d7b.png",
+    "static/media/Data.ddf5417b.png": "/static/media/Data.ddf5417b.png",
+    "static/media/Design.0f3de51e.png": "/static/media/Design.0f3de51e.png",
+    "static/media/DevOps.c7a162f3.png": "/static/media/DevOps.c7a162f3.png",
+    "static/media/Framework.0f329d5f.png": "/static/media/Framework.0f329d5f.png",
+    "static/media/KantaHusari_Resume.4a9d54e0.pdf": "/static/media/KantaHusari_Resume.4a9d54e0.pdf",
+    "static/media/Server.54ae4fc7.png": "/static/media/Server.54ae4fc7.png",
+    "static/media/achievement.c4ff9e5d.png": "/static/media/achievement.c4ff9e5d.png",
+    "static/media/calendar.6cc9a4e3.png": "/static/media/calendar.6cc9a4e3.png",
+    "static/media/education.f2b17182.png": "/static/media/education.f2b17182.png",
+    "static/media/experience.52e68788.png": "/static/media/experience.52e68788.png",
+    "static/media/githubFinal.96997ac2.png": "/static/media/githubFinal.96997ac2.png",
+    "static/media/left-arrow.70152353.png": "/static/media/left-arrow.70152353.png",
+    "static/media/linkedinFinal.d67e7b78.png": "/static/media/linkedinFinal.d67e7b78.png",
+    "static/media/right-arrow.ec6f7c7b.png": "/static/media/right-arrow.ec6f7c7b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4f1af6a.js",
+    "static/js/2.cddc436f.chunk.js",
+    "static/css/main.b20d0022.chunk.css",
+    "static/js/main.461a7d77.chunk.js"
+  ]
+}
