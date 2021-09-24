@@ -29,7 +29,7 @@ export default function Login() {
                     res => {
                         if (res.data.errors === null || res.data.errors === undefined) {
                             //show res here
-                            if (res.data.status === true) {
+                            if (res.data === true) {
                                 seterrorMessage("")
                                 setSerrorMessage("")
                                 setemail("")
