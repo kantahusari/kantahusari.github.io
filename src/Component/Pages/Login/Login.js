@@ -18,6 +18,7 @@ export default function Login() {
     function submitForm() {
         if (email === "" || password === "") {
             seterrorMessage("some fields are missing")
+            setSerrorMessage("")
         } else {
             if (email !== "" && password !== "") {
                 const request = {
@@ -28,7 +29,7 @@ export default function Login() {
                     res => {
                         if (res.data.errors === null || res.data.errors === undefined) {
                             //show res here
-                            if (res.data.status) {
+                            if (res.data.status === true) {
                                 seterrorMessage("")
                                 setSerrorMessage("")
                                 setemail("")
@@ -37,17 +38,20 @@ export default function Login() {
                                     status: res.data.status,
                                 }
                                 cookie.set(`${res.data.user}`, cookieToset)
-                                history.push("/calendar")
+                                history.push("/Calendar")
                             } else {
                                 // seterrorMessage("Unauthorized Access")
-                                setSerrorMessage("Unauthorized Access")
+                                setSerrorMessage("")
+                                seterrorMessage("")
+                                setemail("")
+                                setpassword("")
                             }
                         } else {
                             if (res.data.errors.hasOwnProperty("email")) {
-                                setSerrorMessage("Please enter valid information")
+                                setSerrorMessage("UnAuthorized Access")
                             }
                             if (res.data.errors.hasOwnProperty("password")) {
-                                seterrorMessage("Please enter valid information")
+                                setSerrorMessage("UnAuthorized Access")
                             }
                         }
                     }
