@@ -20,6 +20,8 @@ import {
 import Home from "./Component/Home/Home"
 import Resume from "./Component/Pages/Resume/Resume"
 import Services from "./Component/Pages/Services/Services"
+import Calendar from "./Component/Pages/Calendar/Calendar"
+import Login from "./Component/Pages/Login/Login"
 import Cookies from 'universal-cookie';
 import axios from 'axios'
 
@@ -27,11 +29,14 @@ import axios from 'axios'
 
 export default function App() {
   return (
-    <HashRouter basename="/">
+
+    <HashRouter>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/Resume' component={Resume} />
         <Route exact path='/Services' component={Services} />
+        <Route exact path='/Calendar' component={Calendar} />
+        <Route exact path='/Login' component={Login} />
         <Redirect to="/" />
       </Switch>
     </HashRouter >

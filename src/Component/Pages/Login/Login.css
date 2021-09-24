@@ -1,0 +1,56 @@
+.loginForm {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(2, 5, 48);
+}
+
+.returnbar {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  margin-top: 0%;
+  background-color: rgba(71, 62, 80);
+}
+
+.backbutton {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.logininput {
+  margin-top: 20px;
+  width: 250px;
+  height: 35px;
+  text-align: center;
+}
+
+.loginsubmit {
+  margin-top: 20px;
+  padding: 2px;
+  width: 250px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: rgb(87, 85, 83);
+  color: white;
+}
+
+.loginsubmit:hover,
+.backbutton:hover {
+  cursor: pointer;
+}
