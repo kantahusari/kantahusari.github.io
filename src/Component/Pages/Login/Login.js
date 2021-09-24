@@ -22,8 +22,8 @@ export default function Login() {
         } else {
             if (email !== "" && password !== "") {
                 const request = {
-                    email: email.replace(/[^a-zA-Z0-9_-]/g, ' '),
-                    password: password.replace(/[^a-zA-Z0-9_-]/g, ' '),
+                    email: email,
+                    password: password,
                 }
                 axios.post("https://appzero0.herokuapp.com/user/login", request).then(
                     res => {
