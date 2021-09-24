@@ -27,6 +27,7 @@ export default function Login() {
                 }
                 axios.post("https://appzero0.herokuapp.com/user/login", request).then(
                     res => {
+                        console.log(res)
                         if (res.data.errors === null || res.data.errors === undefined) {
                             //show res here
                             if (res.data === true) {
