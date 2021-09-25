@@ -36,10 +36,11 @@ export default function Login() {
                                 setemail("")
                                 setpassword("")
                                 const cookieToset = {
-                                    status: res.data.status,
-                                    value: res.data.value
-
+                                    "status": res.data.status,
+                                    "value": res.data.value
+                                    
                                 }
+                                console.log(cookieToset)
                                 cookie.set(`${cookieToset.status}`, cookieToset.value)
                                 // cookie.set(res.cookie)
                                 history.push("/Calendar")
