@@ -30,15 +30,18 @@ export default function Login() {
                         console.log(res)
                         if (res.data.errors === null || res.data.errors === undefined) {
                             //show res here
-                            if (res.data === true) {
+                            if (res.status === 200) {
                                 seterrorMessage("")
                                 setSerrorMessage("")
                                 setemail("")
                                 setpassword("")
                                 const cookieToset = {
                                     status: res.data.status,
+                                    value: res.data.value
+
                                 }
-                                cookie.set(`${res.data.user}`, cookieToset)
+                                cookie.set(`${cookieToset.status}`, cookieToset.value)
+                                // cookie.set(res.cookie)
                                 history.push("/Calendar")
                             } else {
                                 // seterrorMessage("Unauthorized Access")
