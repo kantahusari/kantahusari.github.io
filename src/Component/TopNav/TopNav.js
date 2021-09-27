@@ -64,10 +64,10 @@ export default function TopNav() {
         }
     }, []);
     window.addEventListener('resize', showButton);
-
     function tableNormal() {
 
         return (
+
             <table>
                 <tbody>
                     <tr>
@@ -78,6 +78,7 @@ export default function TopNav() {
                     </tr>
                 </tbody>
             </table>
+
         )
     }
 
@@ -111,13 +112,13 @@ export default function TopNav() {
 
     if (window.innerWidth < 960) {
         return (
-            < div className="top" >
+            < div className="TopNavBarCont" >
                 {tablesmall()}
             </div >
         )
     } else {
         return (
-            < div className="top" >
+            < div className="TopNavBarCont" >
                 {tableNormal()}
             </div >
         )

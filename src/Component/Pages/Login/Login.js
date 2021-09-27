@@ -59,6 +59,8 @@ export default function Login() {
                 ).catch(err => {
                     seterrorMessage("")
                     setSerrorMessage("")
+                    setemail("")
+                    setpassword("")
                 })
 
             }
@@ -69,6 +71,7 @@ export default function Login() {
             <div className="returnbar">
                 <div className="backbutton"
                     onClick={() => {
+                        cookie.remove("admin")
                         history.push("/")
                     }}
 
