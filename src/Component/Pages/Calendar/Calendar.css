@@ -135,3 +135,10 @@
 .logout:hover {
   cursor: pointer;
 }
+
+.monthinfoare {
+  width: 85%;
+  margin: auto;
+  margin-top: 2%;
+}
+

@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import "./Calendar.css"
 import moment from "moment"
+import axios from "axios"
 
 
 export default function Calendar() {
@@ -162,6 +163,19 @@ export default function Calendar() {
         return finalDays
 
     }
+    function renderDayInformation() {
+        let data = []
+        const request = {
+            year: currentYear,
+            month: currentMonth,
+        }
+        axios.post("https://appzero0.herokuapp.com/admin/find", request).then(response => {
+            console.log(response.data)
+        })
+        return data
+    }
+
+    // renderDayInformation()
 
     function logout() {
         cookie.remove("admin")
@@ -247,12 +261,31 @@ export default function Calendar() {
 
                     </table>
                 </div>
-                {/* <AddEvent /> */}
+                <div className="monthinfoare">
+                    <table className="monthinfoTable">
+                        <tbody>
+                            <tr className="calendarTableHead">
+                                <th>Topic</th>
+                                <th>Day</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {
+                        renderDayInformation()
+                    }
+                </div>
+
 
 
             </div>
         )
     }
+
+
+
 
     function hide() {
         return (<div>Acces Forbidden</div>)
