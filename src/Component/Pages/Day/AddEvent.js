@@ -57,32 +57,42 @@ export default function AddEvent() {
         if (topic === "" || fromHour === "" || fromMinute === "" || toHour === "" || toMinute === "" || notes === "" || description === "" || priority === "" || status === "") {
             seterror("Empty Fields")
         } else {
-            //to: hours must be greater than or equal to the from hours, minutes must be greater
-            if (toHour >= fromHour && toMinute > fromMinute) {
-                console.log("correct time")
-                //here do the code of the condition is met !!!
-                //------------------------------------------
-                //collect data
-                const Dayevent = {
-                    topic: topic,
-                    year: year,
-                    month: month,
-                    day: day,
-                    fromHour: fromHour,
-                    fromMinute: fromMinute,
-                    toHour: toHour,
-                    toMinute: toMinute,
-                    notes: notes,
-                    description: description,
-                    priority: priority,
-                    status: status,
-                }
-                //make sure
-                console.log(Dayevent)
-                //send the request !!!
-                axios.post("https://appzero0.herokuapp.com/admin/addEvent", Dayevent).then(res => {
-                    if (res.data.errors === null || res.data.errors === undefined) {
-                        console.log(res.data)
+            if (toHour >= fromHour) {
+                if (toMinute > fromMinute) {
+                    //do stuff in here
+                    console.log("correct time")
+                    const Dayevent = {
+                        topic: topic,
+                        year: year,
+                        month: month,
+                        day: day,
+                        fromHour: Number(fromHour),
+                        fromMinute: Number(fromMinute),
+                        toHour: Number(toHour),
+                        toMinute: Number(toMinute),
+                        notes: notes,
+                        description: description,
+                        priority: priority,
+                        status: status,
+                    }
+                    console.log(Dayevent)
+                    //send the request !!!
+                    axios.post("https://appzero0.herokuapp.com/admin/addEvent", Dayevent).then(res => {
+                        if (res.data.errors === null || res.data.errors === undefined) {
+                            console.log(res.data)
+                            settopic("")
+                            setfromHour("")
+                            setfromMinute("")
+                            settoHour("")
+                            settoMinute("")
+                            setnotes("")
+                            setdescription("")
+                            setpriority("")
+                            setstatus("")
+
+                            seterror("")
+                        }
+                    }).catch(err => {
                         settopic("")
                         setfromHour("")
                         setfromMinute("")
@@ -94,27 +104,13 @@ export default function AddEvent() {
                         setstatus("")
 
                         seterror("")
-                    }
-                }).catch(err => {
-                    settopic("")
-                    setfromHour("")
-                    setfromMinute("")
-                    settoHour("")
-                    settoMinute("")
-                    setnotes("")
-                    setdescription("")
-                    setpriority("")
-                    setstatus("")
+                    })
 
-                    seterror("")
-                })
-
-                //clear the form if the form was submitted successfully
-
-
-                //------------------------------------------
+                } else {
+                    seterror("To Minutes Can't be less than from Minutes")
+                }
             } else {
-                seterror("To Time Can't be less than from time")
+                seterror("To Hours Can't be less than from Hours")
             }
         }
 
