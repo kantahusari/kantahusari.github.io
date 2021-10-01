@@ -199,7 +199,7 @@ export default function Calendar() {
                     </tr>
                 )
             })
-
+            console.log(monthData)
             return monthData
         })
 
