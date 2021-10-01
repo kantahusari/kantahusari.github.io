@@ -66,6 +66,8 @@ export default function Calendar() {
     //console.log("initial:")
     //console.log(currentYear, currentMonth, currentDay, startOfMonth, endOfMonth, firstOfMonthINdex, endOfMonthIndex)//before changes
 
+    const [monthdata, setmonthdata] = useState([])
+
     function changedate(a) {
         function setNewDate() {
             settime(time.add(a, 'months'))
@@ -163,86 +165,46 @@ export default function Calendar() {
         return finalDays
 
     }
+
+    function deleteEvent(item) {
+        console.log(item._id)
+    }
+
+    function editEvent(item) {
+        console.log(item._id)
+    }
+
     function renderDayInformation() {
-        var data=[]
+
         const request = {
             year: currentYear,
             month: currentMonth,
         }
-        // axios.post("https://appzero0.herokuapp.com/admin/find", request).then(response => {})
-        const res = [
-            {
-                "_id": "61568c63424adb0016f3bd0e",
-                "topic": "help someone",
-                "year": 2021,
-                "month": 9,
-                "day": 5,
-                "notes": "please tell someone this",
-                "description": "www.google.com",
-                "priority": 0,
-                "status": 1,
-                "__v": 0
-            },
-            {
-                "_id": "61568f92424adb0016f3bd13",
-                "topic": "test",
-                "year": 2021,
-                "month": 9,
-                "day": 1,
-                "notes": "asdfasd",
-                "description": "sdafdasf",
-                "priority": 0,
-                "status": 0,
-                "__v": 0
-            },
-            {
-                "_id": "61568faa424adb0016f3bd15",
-                "topic": "asdfds",
-                "year": 2021,
-                "month": 9,
-                "day": 1,
-                "notes": "sadfdsf",
-                "description": "sdsdf",
-                "priority": 1,
-                "status": 0,
-                "__v": 0
-            },
-            {
-                "_id": "61568fe4424adb0016f3bd17",
-                "topic": "asdfsdf",
-                "year": 2021,
-                "month": 9,
-                "day": 13,
-                "notes": "sadfsd",
-                "description": "sdfsdf",
-                "priority": 1,
-                "status": 0,
-                "__v": 0
-            },
-            {
-                "_id": "61569026424adb0016f3bd19",
-                "topic": "sdfdsfa",
-                "year": 2021,
-                "month": 9,
-                "day": 13,
-                "notes": "sdfsda",
-                "description": "sdfdsfsd",
-                "priority": 0,
-                "status": 0,
-                "__v": 0
-            }
-        ]
-        for(let i=0;i<res.length;i++){
-            data.push(<tr key={res[i]._id}>
-                <td>{res[i].topic}</td>
-                <td>{res[i].day}</td>
-                <td>{res[i].topic}</td>
-                <td>{res[i].topic}</td>
-            </tr>)
-        }
-    }
+        axios.post("https://appzero0.herokuapp.com/admin/find", request).then(res => {
+            const monthData = res.data.map(item => {
+                return (
+                    <tr key={item._id}>
+                        <td style={{ display: "none" }}>{item.year}</td>
+                        <td style={{ display: "none" }}>{item.month}</td>
+                        <td style={{ display: "none" }}>{item.notes}</td>
+                        <td style={{ display: "none" }}>{item.description}</td>
+                        <td style={{ display: "none" }}>{item.priority}</td>
+                        <td style={{ display: "none" }}>{item.status}</td>
+                        <td className="calendarTD">{item.topic}</td>
+                        <td className="calendarTD">{item.day}</td>
+                        <td className="calendarTD">{`${item.fromhour}:${item.fromminute}`}</td>
+                        <td className="calendarTD">{`${item.tohour}:${item.tominute}`}</td>
+                        <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
+                        <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
+                    </tr>
+                )
+            })
 
-    // renderDayInformation()
+            return monthData
+        })
+
+
+    }
 
     function logout() {
         cookie.remove("admin")
@@ -337,12 +299,14 @@ export default function Calendar() {
                                 <th>From</th>
                                 <th>To</th>
                                 <th></th>
+                                <th></th>
                             </tr>
+                            {
+                                renderDayInformation()
+                            }
                         </tbody>
                     </table>
-                    {
-                        renderDayInformation()
-                    }
+
                 </div>
 
 
@@ -369,6 +333,7 @@ export default function Calendar() {
 
         }
     }
+
     useEffect(() => {
         setTimeout(() => {
             checkStatus();
