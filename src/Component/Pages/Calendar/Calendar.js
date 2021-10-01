@@ -9,11 +9,13 @@ import moment from "moment"
 
 export default function Calendar() {
     const history = useHistory()
+    localStorage.clear()
     const cookie = new Cookies()
     const all = cookie.getAll()
     const [pagereloader, setpagereloader] = useState(false)
     const [changeStatus, setchangeStatus] = useState(false)
     const [flush, setflush] = useState("")
+
     const months = [
         "January",
         "February",
@@ -83,7 +85,16 @@ export default function Calendar() {
     }
 
     function onDayClick(day) {
-        console.log(day)
+        const dayinfo = {
+            "day": day,
+            "month": currentMonth,
+            "year": currentYear
+        }
+        // localStorage.setItem('day', JSON.stringify(dayinfo));
+        localStorage.setItem('day', dayinfo.day);
+        localStorage.setItem('month', dayinfo.month);
+        localStorage.setItem('year', dayinfo.year);
+        history.push("/Calendar/Day")
     }
     function renderdaysofthemonth() {
         let days = []
@@ -112,7 +123,7 @@ export default function Calendar() {
             }
             days.push(week)
         }
-        function changevakue(value, index) {
+        function changevalue(value, index) {
             if (value === "") {
                 return <td
                     key={index}
@@ -147,7 +158,7 @@ export default function Calendar() {
                 }
             }
         }
-        var finalDays = days.map(subarray => subarray.map(changevakue))
+        var finalDays = days.map(subarray => subarray.map(changevalue))
         return finalDays
 
     }
@@ -236,6 +247,8 @@ export default function Calendar() {
 
                     </table>
                 </div>
+                {/* <AddEvent /> */}
+
 
             </div>
         )
@@ -244,88 +257,7 @@ export default function Calendar() {
     function hide() {
         return (<div>Acces Forbidden</div>)
     }
-    // renderdaysofthemonth()
-    // return (
-    //     <div className="allpage">
-    //         <div className="logbar" >
-    //             <div className="logout"
-    //                 onClick={
-    //                     () => {
-    //                         logout()
-    //                     }
-    //                 }
-    //             ><h1>Logout</h1></div>
-    //         </div>
-    //         <div className="calendarBody">
-    //             <div className="navigation">
-    //                 <div className="navigationButton"
-    //                     onClick={
-    //                         () => {
-    //                             changedate(-1)
-    //                         }
-    //                     }>{`<`}</div>
-    //                 <p className="navigationDisplay">{`${months[currentMonth]}, ${currentYear}`}<br />{todayInfo}</p>
-    //                 <div className="navigationButton"
-    //                     onClick={
-    //                         () => {
-    //                             changedate(1)
-    //                         }
-    //                     }>{`>`}</div>
-    //             </div>
 
-    //             <table className="calendarTable">
-    //                 <tbody className="calendarTablebody">
-
-    //                     <tr className="calendarTableHead">
-    //                         <th>Sun</th>
-    //                         <th>Mon</th>
-    //                         <th>Tue</th>
-    //                         <th>Wed</th>
-    //                         <th>Thu</th>
-    //                         <th>Fri</th>
-    //                         <th>Sat</th>
-    //                     </tr>
-
-    //                     {/*--------ADD DAYS HERE--------*/}
-    //                     <tr className="calendarTableData">
-    //                         {
-    //                             renderdaysofthemonth()[0]
-    //                         }
-    //                     </tr>
-    //                     <tr className="calendarTableData">
-    //                         {
-    //                             renderdaysofthemonth()[1]
-    //                         }
-    //                     </tr>
-    //                     <tr className="calendarTableData">
-    //                         {
-    //                             renderdaysofthemonth()[2]
-    //                         }
-    //                     </tr>
-    //                     <tr className="calendarTableData">
-    //                         {
-    //                             renderdaysofthemonth()[3]
-    //                         }
-    //                     </tr>
-    //                     <tr className="calendarTableData">
-    //                         {
-    //                             renderdaysofthemonth()[4]
-    //                         }
-    //                     </tr>
-    //                     <tr className="calendarTableData">
-    //                         {
-    //                             renderdaysofthemonth()[5]
-    //                         }
-    //                     </tr>
-
-
-    //                 </tbody>
-
-    //             </table>
-    //         </div>
-
-    //     </div>
-    // )
     function checkStatus() {
         setTimeout(() => {
             setchangeStatus(!changeStatus)

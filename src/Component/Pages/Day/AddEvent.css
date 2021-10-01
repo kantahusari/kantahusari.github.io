@@ -1,0 +1,52 @@
+.addEvent {
+  width: 70%;
+  height: fit-content;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* background-color: rgb(0, 56, 167); */
+  background-color: rgb(3, 46, 46);
+  color: white;
+}
+
+.addEventInput {
+  width: 30%;
+  height: 25px;
+  margin-top: 15px;
+}
+.addEventInputTextArea {
+  max-width: 30%;
+  min-width: 30%;
+  width: 30%;
+  max-height: 100px;
+  min-height: 30px;
+  height: 60px;
+
+  margin-top: 15px;
+}
+.addEventLabel {
+  color: white;
+}
+.addEventLabelTimeFrame {
+  color: white;
+  margin-left: -26%;
+  font-weight: bold;
+}
+.addEventInputTime {
+  width: 10%;
+  height: 25px;
+  margin-top: 15px;
+}
+
+.addEventSubmit {
+  margin: auto;
+  width: 30%;
+  height: 25px;
+  margin-top: 30px;
+  padding: 10px;
+  font-weight: bold;
+  background-color: rgb(74, 87, 109);
+  cursor: pointer;
+}
