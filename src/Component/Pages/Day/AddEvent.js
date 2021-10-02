@@ -57,29 +57,43 @@ export default function AddEvent() {
         if (topic === "" || fromHour === "" || fromMinute === "" || toHour === "" || toMinute === "" || notes === "" || description === "" || priority === "" || status === "") {
             seterror("Empty Fields")
         } else {
-            if (toHour >= fromHour) {
-                if (toMinute > fromMinute) {
-                    //do stuff in here
-                    console.log("correct time")
-                    const Dayevent = {
-                        topic: topic,
-                        year: year,
-                        month: month,
-                        day: day,
-                        fromHour: Number(fromHour),
-                        fromMinute: Number(fromMinute),
-                        toHour: Number(toHour),
-                        toMinute: Number(toMinute),
-                        notes: notes,
-                        description: description,
-                        priority: priority,
-                        status: status,
-                    }
-                    console.log(Dayevent)
-                    //send the request !!!
-                    axios.post("https://appzero0.herokuapp.com/admin/addEvent", Dayevent).then(res => {
-                        if (res.data.errors === null || res.data.errors === undefined) {
-                            console.log(res.data)
+            if (Number(toHour) < Number(fromHour)) {
+                seterror("Can't move backward in time !!!")
+            } else {
+                if (Number(toHour) === Number(fromHour) && Number(toMinute) <= Number(fromMinute)) {
+                    seterror("Time must move forward !!!")
+                } else {
+                        console.log("correct time")
+                        const Dayevent = {
+                            topic: topic,
+                            year: year,
+                            month: month,
+                            day: day,
+                            fromHour: Number(fromHour),
+                            fromMinute: Number(fromMinute),
+                            toHour: Number(toHour),
+                            toMinute: Number(toMinute),
+                            notes: notes,
+                            description: description,
+                            priority: priority,
+                            status: status,
+                        }
+                        // send the request !!!
+                        axios.post("https://appzero0.herokuapp.com/admin/addEvent", Dayevent).then(res => {
+                            if (res.data.errors === null || res.data.errors === undefined) {
+                                settopic("")
+                                setfromHour("")
+                                setfromMinute("")
+                                settoHour("")
+                                settoMinute("")
+                                setnotes("")
+                                setdescription("")
+                                setpriority("")
+                                setstatus("")
+
+                                seterror("")
+                            }
+                        }).catch(err => {
                             settopic("")
                             setfromHour("")
                             setfromMinute("")
@@ -91,26 +105,9 @@ export default function AddEvent() {
                             setstatus("")
 
                             seterror("")
-                        }
-                    }).catch(err => {
-                        settopic("")
-                        setfromHour("")
-                        setfromMinute("")
-                        settoHour("")
-                        settoMinute("")
-                        setnotes("")
-                        setdescription("")
-                        setpriority("")
-                        setstatus("")
-
-                        seterror("")
-                    })
-
-                } else {
-                    seterror("To Minutes Can't be less than from Minutes")
+                        })
+                
                 }
-            } else {
-                seterror("To Hours Can't be less than from Hours")
             }
         }
 
@@ -120,15 +117,6 @@ export default function AddEvent() {
     return (
         <div className="addEvent">
             <input className="addEventInput" placeholder="Topic" value={topic} onChange={(event) => { event.preventDefault(); settopic(event.target.value) }}></input><br />
-            {
-                /* 
-
-                <input className="addEventInput" placeholder="Year" value={year} onChange={(event) => { event.preventDefault(); setyear(event.target.value) }}></input><br />
-                <input className="addEventInput" placeholder="Month" value={month} onChange={(event) => { event.preventDefault(); setmonth(event.target.value) }}></input><br />
-                <input className="addEventInput" placeholder="Day" value={day} onChange={(event) => { event.preventDefault(); setday(event.target.value) }}></input><br /> 
-                
-                */
-            }
             <br />
             <label className="addEventLabelTimeFrame">From: </label><br />
             <label className="addEventLabel">Hour</label>

@@ -315,16 +315,10 @@ export default function Calendar() {
                             {
                                 renderDayInformation()
                             }
-
                         </div>
                     </div>
-
-
+                    
                 </div>
-
-
-
-
             </div>
         )
     }
