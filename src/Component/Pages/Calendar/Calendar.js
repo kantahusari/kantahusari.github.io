@@ -174,60 +174,55 @@ export default function Calendar() {
     }
 
     function renderDayInformation() {
+        // const request = {
+        //     year: currentYear,
+        //     month: currentMonth,
+        // }
+
+        // axios.post("https://appzero0.herokuapp.com/admin/find", request)
+        //     .then(res => {
+        //         const monthData = res.data
+        //         setmonthdata([...monthData])
+        //     })
         if (monthdata.length === 0) {
             return (
                 <h1>No events to show</h1>
             )
         } else {
-            const request = {
-                year: currentYear,
-                month: currentMonth,
-            }
-            axios.post("https://appzero0.herokuapp.com/admin/find", request)
-                .then(res => {
-                    const monthData = res.data
-                    setmonthdata([...monthData])
-                }).finally(() => {
-                    return (
-                        <table className="monthinfoTable">
-                            <tbody>
-                                <tr className="calendarTableHead">
-                                    <th>Topic</th>
-                                    <th>Day</th>
-                                    <th>From</th>
-                                    <th>To</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                {
-                                    monthdata.map(
-                                        item =>
-                                            <tr key={item._id}>
-                                                <td style={{ display: "none" }}>{item.year}</td>
-                                                <td style={{ display: "none" }}>{item.month}</td>
-                                                <td style={{ display: "none" }}>{item.notes}</td>
-                                                <td style={{ display: "none" }}>{item.description}</td>
-                                                <td style={{ display: "none" }}>{item.priority}</td>
-                                                <td style={{ display: "none" }}>{item.status}</td>
-                                                <td className="calendarTD">{item.topic}</td>
-                                                <td className="calendarTD">{item.day}</td>
-                                                <td className="calendarTD">{`${item.fromhour}:${item.fromminute}`}</td>
-                                                <td className="calendarTD">{`${item.tohour}:${item.tominute}`}</td>
-                                                <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
-                                                <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
-                                            </tr>
-                                    )
-                                }
-                            </tbody>
-                        </table>
-                    )
 
-
-                })
-
-
-
-
+            return (
+                <table className="monthinfoTable">
+                    <tbody>
+                        <tr className="calendarTableHead">
+                            <th>Topic</th>
+                            <th>Day</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        {
+                            monthdata.map(
+                                item =>
+                                    <tr key={item._id}>
+                                        <td style={{ display: "none" }}>{item.year}</td>
+                                        <td style={{ display: "none" }}>{item.month}</td>
+                                        <td style={{ display: "none" }}>{item.notes}</td>
+                                        <td style={{ display: "none" }}>{item.description}</td>
+                                        <td style={{ display: "none" }}>{item.priority}</td>
+                                        <td style={{ display: "none" }}>{item.status}</td>
+                                        <td className="calendarTD">{item.topic}</td>
+                                        <td className="calendarTD">{item.day}</td>
+                                        <td className="calendarTD">{`${item.fromhour}:${item.fromminute}`}</td>
+                                        <td className="calendarTD">{`${item.tohour}:${item.tominute}`}</td>
+                                        <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
+                                        <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
+                                    </tr>
+                            )
+                        }
+                    </tbody>
+                </table>
+            )
         }
 
     }
@@ -345,23 +340,24 @@ export default function Calendar() {
         }
     }
 
-    // useEffect(() => {
-    //     const request = {
-    //         year: currentYear,
-    //         month: currentMonth,
-    //     }
-    //     axios.post("https://appzero0.herokuapp.com/admin/find", request)
-    //         .then(res => {
-    //             const monthData = res.data
-    //             setmonthdata([...monthData])
-    //         })
+    useEffect(() => {
+        const request = {
+            year: currentYear,
+            month: currentMonth,
+        }
+        axios.post("https://appzero0.herokuapp.com/admin/find", request)
+            .then(res => {
+                const monthData = res.data
+                setmonthdata([...monthData])
+            })
 
-    // }, [changeStatus])
+    }, [monthdata])
 
 
 
     useEffect(() => {
         setTimeout(() => {
+            renderDayInformation();
             checkStatus();
         }, 650);
         return () => {
