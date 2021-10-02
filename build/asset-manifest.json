@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.cfd4e5f1.chunk.css",
-    "main.js": "/static/js/main.7423c121.chunk.js",
-    "main.js.map": "/static/js/main.7423c121.chunk.js.map",
+    "main.css": "/static/css/main.72ffd5f9.chunk.css",
+    "main.js": "/static/js/main.8418bfca.chunk.js",
+    "main.js.map": "/static/js/main.8418bfca.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.746874bd.js",
     "runtime-main.js.map": "/static/js/runtime-main.746874bd.js.map",
     "static/js/2.bd3cfa5d.chunk.js": "/static/js/2.bd3cfa5d.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.f9e0c340.chunk.js": "/static/js/3.f9e0c340.chunk.js",
     "static/js/3.f9e0c340.chunk.js.map": "/static/js/3.f9e0c340.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.cfd4e5f1.chunk.css.map": "/static/css/main.cfd4e5f1.chunk.css.map",
+    "static/css/main.72ffd5f9.chunk.css.map": "/static/css/main.72ffd5f9.chunk.css.map",
     "static/js/2.bd3cfa5d.chunk.js.LICENSE.txt": "/static/js/2.bd3cfa5d.chunk.js.LICENSE.txt",
     "static/media/AshyadLogo.b666b8fa.png": "/static/media/AshyadLogo.b666b8fa.png",
     "static/media/BabTuma.1131e63b.png": "/static/media/BabTuma.1131e63b.png",
@@ -33,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.746874bd.js",
     "static/js/2.bd3cfa5d.chunk.js",
-    "static/css/main.cfd4e5f1.chunk.css",
-    "static/js/main.7423c121.chunk.js"
+    "static/css/main.72ffd5f9.chunk.css",
+    "static/js/main.8418bfca.chunk.js"
   ]
 }

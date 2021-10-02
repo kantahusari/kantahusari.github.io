@@ -176,19 +176,10 @@ export default function Calendar() {
     }
 
     function renderDayInformation() {
-        // const request = {
-        //     year: currentYear,
-        //     month: currentMonth,
-        // }
 
-        // axios.post("https://appzero0.herokuapp.com/admin/find", request)
-        //     .then(res => {
-        //         const monthData = res.data
-        //         setmonthdata([...monthData])
-        //     })
         if (monthdata.length === 0) {
             return (
-                <h1>No events to show</h1>
+                <h1 className="emptydatatext">No events to show</h1>
             )
         } else {
 
@@ -331,84 +322,6 @@ export default function Calendar() {
 
                 </div>
 
-
-
-                {/*
-                 <div className="calendarBody">
-                    <div className="navigation">
-                        <div className="navigationButton"
-                            onClick={
-                                () => {
-                                    changedate(-1)
-                                }
-                            }>{`<`}</div>
-                        <p className="navigationDisplay">{`${months[currentMonth]}, ${currentYear}`}<br />{todayInfo}</p>
-                        <div className="navigationButton"
-                            onClick={
-                                () => {
-                                    changedate(1)
-                                }
-                            }>{`>`}</div>
-                    </div>
-
-                    <table className="calendarTable">
-                        <tbody className="calendarTablebody">
-
-                            <tr className="calendarTableHead">
-                                <th>Sun</th>
-                                <th>Mon</th>
-                                <th>Tue</th>
-                                <th>Wed</th>
-                                <th>Thu</th>
-                                <th>Fri</th>
-                                <th>Sat</th>
-                            </tr>
-
-                            <tr className="calendarTableData">
-                                {
-                                    renderdaysofthemonth()[0]
-                                }
-                            </tr>
-                            <tr className="calendarTableData">
-                                {
-                                    renderdaysofthemonth()[1]
-                                }
-                            </tr>
-                            <tr className="calendarTableData">
-                                {
-                                    renderdaysofthemonth()[2]
-                                }
-                            </tr>
-                            <tr className="calendarTableData">
-                                {
-                                    renderdaysofthemonth()[3]
-                                }
-                            </tr>
-                            <tr className="calendarTableData">
-                                {
-                                    renderdaysofthemonth()[4]
-                                }
-                            </tr>
-                            <tr className="calendarTableData">
-                                {
-                                    renderdaysofthemonth()[5]
-                                }
-                            </tr>
-
-
-                        </tbody>
-
-                    </table>
-                </div>
-
-
-                <div className="monthinfoare">
-                    {
-                        renderDayInformation()
-                    }
-
-                </div> 
-                */}
 
 
 
