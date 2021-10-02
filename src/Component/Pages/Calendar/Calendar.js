@@ -15,6 +15,7 @@ export default function Calendar() {
     const all = cookie.getAll()
     const [pagereloader, setpagereloader] = useState(false)
     const [changeStatus, setchangeStatus] = useState(false)
+    const [navStatus, setnavStatus] = useState(false)
     const [flush, setflush] = useState("")
 
     const months = [
@@ -69,6 +70,7 @@ export default function Calendar() {
     const [monthdata, setmonthdata] = useState([])
 
     function changedate(a) {
+        setnavStatus(!navStatus)
         function setNewDate() {
             settime(time.add(a, 'months'))
         }
@@ -351,7 +353,7 @@ export default function Calendar() {
                 setmonthdata([...monthData])
             })
 
-    }, [])
+    }, [navStatus])
 
 
 
