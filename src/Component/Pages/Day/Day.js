@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unreachable */
 import React, { useState, useEffect } from 'react'
@@ -25,48 +26,13 @@ export default function Day() {
         "December"
     ]
 
-    const [dayDate, setdayDate] = useState([1])
+
 
     function close() {
         localStorage.clear()
         history.push("/Calendar")
     }
 
-    function renderTable() {
-        var hoursTable = []
-        var hour = 6
-        var index = 1
-        for (let i = 0; i < 12; i++) {
-            var min = 0
-            for (let j = 0; j < 4; j++) {
-                hoursTable.push(<tr key={index}><th>{`${hour}:${min}`}</th></tr>)
-                index++
-                min += 15
-            }
-            hour++
-        }
-        return (
-            <table className="daysTableLeftHead">
-                <tbody>
-                    <tr>
-                        <th>
-                            {`task -->`}
-                        </th>
-                    </tr>
-                    {hoursTable}
-                </tbody>
-            </table>
-        )
-    }
-
-
-    function DayInformation() {
-        if (dayDate.length <= 0) {
-            return <>No Info</>
-        } else {
-            return renderTable()
-        }
-    }
 
     return (
 
@@ -91,12 +57,6 @@ export default function Day() {
             </div>
 
             <AddEvent />
-            
-            {/* <div className="dayinfoarea">
-                {
-                    DayInformation()
-                }
-            </div> */}
 
         </div>
 

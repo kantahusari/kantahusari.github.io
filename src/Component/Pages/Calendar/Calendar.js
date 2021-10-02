@@ -93,7 +93,6 @@ export default function Calendar() {
             "month": currentMonth,
             "year": currentYear
         }
-        // localStorage.setItem('day', JSON.stringify(dayinfo));
         localStorage.setItem('day', dayinfo.day);
         localStorage.setItem('month', dayinfo.month);
         localStorage.setItem('year', dayinfo.year);
@@ -180,70 +179,56 @@ export default function Calendar() {
                 <h1>No events to show</h1>
             )
         } else {
-            return (
-                <table className="monthinfoTable">
-                    <tbody>
-                        <tr className="calendarTableHead">
-                            <th>Topic</th>
-                            <th>Day</th>
-                            <th>From</th>
-                            <th>To</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        {
-                            monthdata.map(
-                                item =>
-                                    <tr key={item._id}>
-                                        <td style={{ display: "none" }}>{item.year}</td>
-                                        <td style={{ display: "none" }}>{item.month}</td>
-                                        <td style={{ display: "none" }}>{item.notes}</td>
-                                        <td style={{ display: "none" }}>{item.description}</td>
-                                        <td style={{ display: "none" }}>{item.priority}</td>
-                                        <td style={{ display: "none" }}>{item.status}</td>
-                                        <td className="calendarTD">{item.topic}</td>
-                                        <td className="calendarTD">{item.day}</td>
-                                        <td className="calendarTD">{`${item.fromhour}:${item.fromminute}`}</td>
-                                        <td className="calendarTD">{`${item.tohour}:${item.tominute}`}</td>
-                                        <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
-                                        <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
-                                    </tr>
-                            )
-                        }
-                    </tbody>
-                </table>
-            )
+            const request = {
+                year: currentYear,
+                month: currentMonth,
+            }
+            axios.post("https://appzero0.herokuapp.com/admin/find", request)
+                .then(res => {
+                    const monthData = res.data
+                    setmonthdata([...monthData])
+                }).finally(() => {
+                    return (
+                        <table className="monthinfoTable">
+                            <tbody>
+                                <tr className="calendarTableHead">
+                                    <th>Topic</th>
+                                    <th>Day</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                {
+                                    monthdata.map(
+                                        item =>
+                                            <tr key={item._id}>
+                                                <td style={{ display: "none" }}>{item.year}</td>
+                                                <td style={{ display: "none" }}>{item.month}</td>
+                                                <td style={{ display: "none" }}>{item.notes}</td>
+                                                <td style={{ display: "none" }}>{item.description}</td>
+                                                <td style={{ display: "none" }}>{item.priority}</td>
+                                                <td style={{ display: "none" }}>{item.status}</td>
+                                                <td className="calendarTD">{item.topic}</td>
+                                                <td className="calendarTD">{item.day}</td>
+                                                <td className="calendarTD">{`${item.fromhour}:${item.fromminute}`}</td>
+                                                <td className="calendarTD">{`${item.tohour}:${item.tominute}`}</td>
+                                                <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
+                                                <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
+                                            </tr>
+                                    )
+                                }
+                            </tbody>
+                        </table>
+                    )
+
+
+                })
+
+
+
+
         }
-
-
-
-        // const request = {
-        //     year: currentYear,
-        //     month: currentMonth,
-        // }
-        // axios.post("https://appzero0.herokuapp.com/admin/find", request).then(res => {
-        //     const monthData = res.data.map(item => {
-        //         return (
-        //             <tr key={item._id}>
-        //                 <td style={{ display: "none" }}>{item.year}</td>
-        //                 <td style={{ display: "none" }}>{item.month}</td>
-        //                 <td style={{ display: "none" }}>{item.notes}</td>
-        //                 <td style={{ display: "none" }}>{item.description}</td>
-        //                 <td style={{ display: "none" }}>{item.priority}</td>
-        //                 <td style={{ display: "none" }}>{item.status}</td>
-        //                 <td className="calendarTD">{item.topic}</td>
-        //                 <td className="calendarTD">{item.day}</td>
-        //                 <td className="calendarTD">{`${item.fromhour}:${item.fromminute}`}</td>
-        //                 <td className="calendarTD">{`${item.tohour}:${item.tominute}`}</td>
-        //                 <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
-        //                 <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
-        //             </tr>
-        //         )
-        //     })
-        //     console.log(monthData)
-        //     return monthData
-        // })
-
 
     }
 
@@ -360,19 +345,18 @@ export default function Calendar() {
         }
     }
 
-    useEffect(() => {
-        const request = {
-            year: currentYear,
-            month: currentMonth,
-        }
-        axios.post("https://appzero0.herokuapp.com/admin/find", request)
-            .then(res => {
-                const monthData = res.data
-                // console.log(cardData)
-                setmonthdata([...monthData])
-            })
+    // useEffect(() => {
+    //     const request = {
+    //         year: currentYear,
+    //         month: currentMonth,
+    //     }
+    //     axios.post("https://appzero0.herokuapp.com/admin/find", request)
+    //         .then(res => {
+    //             const monthData = res.data
+    //             setmonthdata([...monthData])
+    //         })
 
-    }, [changeStatus])
+    // }, [changeStatus])
 
 
 
