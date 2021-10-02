@@ -351,13 +351,13 @@ export default function Calendar() {
                 setmonthdata([...monthData])
             })
 
-    }, [monthdata])
+    }, [])
 
 
 
     useEffect(() => {
         setTimeout(() => {
-            renderDayInformation();
+            // renderDayInformation();
             checkStatus();
         }, 650);
         return () => {
