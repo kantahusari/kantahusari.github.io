@@ -237,6 +237,7 @@ export default function Calendar() {
     function show() {
         return (
             <div className="allpage">
+
                 <div className="logbar" >
                     <div className="logout"
                         onClick={
@@ -246,7 +247,94 @@ export default function Calendar() {
                         }
                     ><h1>Logout</h1></div>
                 </div>
-                <div className="calendarBody">
+
+                <div className="calendarArea">
+
+                    <div className="calendarShow">
+                        <div className="navigation">
+                            <div className="navigationButton"
+                                onClick={
+                                    () => {
+                                        changedate(-1)
+                                    }
+                                }>{`<`}</div>
+                            <p className="navigationDisplay">{`${months[currentMonth]}, ${currentYear}`}<br />{todayInfo}</p>
+                            <div className="navigationButton"
+                                onClick={
+                                    () => {
+                                        changedate(1)
+                                    }
+                                }>{`>`}</div>
+                        </div>
+                        <table className="calendarTable">
+                            <tbody className="calendarTablebody">
+
+                                <tr className="calendarTableHead">
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                    <th>Fri</th>
+                                    <th>Sat</th>
+                                </tr>
+
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[0]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[1]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[2]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[3]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[4]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[5]
+                                    }
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+
+
+                    </div>
+
+                    <div className="calendarInformation">
+                        <div className="monthinfoare">
+                            {
+                                renderDayInformation()
+                            }
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                {/*
+                 <div className="calendarBody">
                     <div className="navigation">
                         <div className="navigationButton"
                             onClick={
@@ -276,7 +364,6 @@ export default function Calendar() {
                                 <th>Sat</th>
                             </tr>
 
-                            {/*--------ADD DAYS HERE--------*/}
                             <tr className="calendarTableData">
                                 {
                                     renderdaysofthemonth()[0]
@@ -313,12 +400,15 @@ export default function Calendar() {
 
                     </table>
                 </div>
+
+
                 <div className="monthinfoare">
                     {
                         renderDayInformation()
                     }
 
-                </div>
+                </div> 
+                */}
 
 
 
@@ -341,7 +431,7 @@ export default function Calendar() {
 
         }
     }
-
+    //this will work as component mounting tool
     useEffect(() => {
         const request = {
             year: currentYear,
@@ -359,7 +449,6 @@ export default function Calendar() {
 
     useEffect(() => {
         setTimeout(() => {
-            // renderDayInformation();
             checkStatus();
         }, 650);
         return () => {
