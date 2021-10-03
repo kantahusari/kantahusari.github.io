@@ -14,7 +14,18 @@ export default function Login() {
 
     const [errorMessage, seterrorMessage] = useState("")
     const [SerrorMessage, setSerrorMessage] = useState("")
+    //------------------Test
 
+    // const cookieToset = {
+    //     "value": "hello from value",
+    //     "name": "hello from name",
+    //     "status": "hello from status"
+    // }
+    // cookie.set(cookieToset.name, JSON.stringify(cookieToset))
+    // console.log(cookie.get(cookieToset.name).value)
+
+
+    //------------------Test
     function submitForm() {
         if (email === "" || password === "") {
             seterrorMessage("some fields are missing")
@@ -39,11 +50,7 @@ export default function Login() {
                                     "status": res.data.status
                                 }
                                 // cookie.set(`${cookieToset.name}`, cookieToset.value)
-                                cookie.set(`${cookieToset.name}`, {
-                                    "value": cookieToset.value,
-                                    "name": cookieToset.name,
-                                    "status": cookieToset.status
-                                })
+                                cookie.set(cookieToset.name, JSON.stringify(cookieToset))
                                 history.push("/Calendar")
                             } else {
                                 // seterrorMessage("Unauthorized Access")
