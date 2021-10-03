@@ -340,9 +340,9 @@ export default function Calendar() {
         setTimeout(() => {
             setchangeStatus(!changeStatus)
         }, 650);
-        if (all.hasOwnProperty(localStorage.getItem("auth").name)) {
+        if (all.hasOwnProperty(localStorage.getItem('auth').name)) {
             console.log("there is a cookie")
-            if (cookie.get(localStorage.getItem("auth").name).value === authValues.value) {
+            if (cookie.get(localStorage.getItem('auth').name).value === authValues.value) {
                 console.log("cookie value match")
                 setpagereloader(true);
             } else {

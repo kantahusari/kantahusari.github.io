@@ -50,7 +50,7 @@ export default function Login() {
                                 //     "status": res.data.status
                                 // }
                                 // cookie.set(`${cookieToset.name}`, cookieToset.value)
-                                localStorage.setItem("auth", res.data)
+                                localStorage.setItem("auth",JSON.stringify(res.data))
                                 cookie.set(res.data.name, JSON.stringify(res.data))
                                 history.push("/Calendar")
                             } else {
