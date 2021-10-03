@@ -361,37 +361,38 @@ export default function Calendar() {
             year: currentYear,
             month: currentMonth,
         }
-        let one = "https://appzero0.herokuapp.com/user/login/checkstatus"
-        let two = "https://appzero0.herokuapp.com/admin/find"
 
-        // const requestONE = 
-        // const requestTwo = 
+        // let one = "https://appzero0.herokuapp.com/user/login/checkstatus"
+        // let two = "https://appzero0.herokuapp.com/admin/find"
 
-         axios.all([axios.post(one, ""), axios.post(two, request)]).then(axios.spread((res1,res2) => {
-            //this is the response to the first call
-            const responseOne = res1
-            const authstatus = responseOne.data
-            setauthValues(authstatus)
-            console.log("this is auth data: ")
-            console.log(authValues)
+        //  axios.all([axios.post(one, ""), axios.post(two, request)]).then(axios.spread((res1,res2) => {
+        //     const responseOne = res1
+        //     const authstatus = responseOne.data
+        //     setauthValues(authstatus)
+        //     console.log("this is auth data: ")
+        //     console.log(authValues)
 
-            //this is the response to the first call
-            const responseTwo = res2
-            const monthData = responseTwo.data
-            setmonthdata([...monthData])
-            console.log("this is month data: ")
-            console.log(monthdata)
+        //     const responseTwo = res2
+        //     const monthData = responseTwo.data
+        //     setmonthdata([...monthData])
+        //     console.log("this is month data: ")
+        //     console.log(monthdata)
 
-        })).catch(errors => {
-            console.log(errors)
-        })
+        // })).catch(errors => {
+        //     console.log(errors)
+        // })
 
         //-----------------------
-        // axios.post("https://appzero0.herokuapp.com/admin/find", request)
-        //     .then(res => {
-        //         const monthData = res.data
-        //         setmonthdata([...monthData])
-        //     })
+        axios.post("https://appzero0.herokuapp.com/admin/find", request)
+            .then(res => {
+                const monthData = res.data
+                setmonthdata([...monthData])
+            })
+        axios.post("https://appzero0.herokuapp.com/user/login/checkstatus", "")
+            .then(res => {
+                const authData = res.data
+                setauthValues(authData)
+            })
 
     }, [navStatus])
 
