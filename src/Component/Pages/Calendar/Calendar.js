@@ -364,10 +364,10 @@ export default function Calendar() {
         let one = "https://appzero0.herokuapp.com/user/login/checkstatus"
         let two = "https://appzero0.herokuapp.com/admin/find"
 
-        const requestONE = axios.post(one, "")
-        const requestTwo = axios.post(two, request)
+        // const requestONE = 
+        // const requestTwo = 
 
-         axios.all([requestONE, requestTwo]).then(axios.spread((res1,res2) => {
+         axios.all([axios.post(one, ""), axios.post(two, request)]).then(axios.spread((res1,res2) => {
             //this is the response to the first call
             const responseOne = res1
             const authstatus = responseOne.data
