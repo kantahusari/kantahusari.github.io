@@ -342,6 +342,7 @@ export default function Calendar() {
         }, 650);
         if (all.hasOwnProperty("admin")) {
             console.log("there is a cookie")
+            console.log(cookie.get("admin"))
             if (cookie.get("admin").value === authValues.value) {
                 console.log("cookie value match")
                 setpagereloader(true);
