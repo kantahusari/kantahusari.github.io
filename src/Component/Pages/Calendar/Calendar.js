@@ -341,12 +341,16 @@ export default function Calendar() {
             setchangeStatus(!changeStatus)
         }, 650);
         if (all.hasOwnProperty(authValues.name)) {
+            console.log("there is a cookie")
             if (cookie.get(authValues.name).value === authValues.value) {
+                console.log("cookie value match")
                 setpagereloader(true);
             } else {
+                console.log("cookie value does not match")
                 setpagereloader(false);
             }
         } else {
+            console.log("there is no cookie")
             setpagereloader(false);
         }
     }
