@@ -372,12 +372,15 @@ export default function Calendar() {
             const responseOne = responses[0]
             const authstatus = responseOne.data
             setauthValues(authstatus)
-
+            console.log("this is auth data: ")
+            console.log(authValues)
 
             //this is the response to the first call
             const responseTwo = responses[1]
             const monthData = responseTwo.data
             setmonthdata([...monthData])
+            console.log("this is month data: ")
+            console.log(monthdata)
 
         })).catch(errors => {
             console.log(errors)
