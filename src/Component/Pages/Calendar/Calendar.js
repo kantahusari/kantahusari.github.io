@@ -367,16 +367,16 @@ export default function Calendar() {
         const requestONE = axios.post(one, "")
         const requestTwo = axios.post(two, request)
 
-        axios.all([requestONE, requestTwo]).then(axios.spread((...responses) => {
+         axios.all([requestONE, requestTwo]).then(axios.spread((res1,res2) => {
             //this is the response to the first call
-            const responseOne = responses[0]
+            const responseOne = res1
             const authstatus = responseOne.data
             setauthValues(authstatus)
             console.log("this is auth data: ")
             console.log(authValues)
 
             //this is the response to the first call
-            const responseTwo = responses[1]
+            const responseTwo = res2
             const monthData = responseTwo.data
             setmonthdata([...monthData])
             console.log("this is month data: ")
