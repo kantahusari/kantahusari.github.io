@@ -34,11 +34,12 @@ export default function Login() {
                                 setemail("")
                                 setpassword("")
                                 const cookieToset = {
-                                    "status": res.data.status,
-                                    "value": res.data.value
-
+                                    "value": res.data.value,
+                                    "name": res.data.name,
+                                    "status": res.data.status
                                 }
-                                cookie.set(`${cookieToset.status}`, cookieToset.value)
+                                // cookie.set(`${cookieToset.name}`, cookieToset.value)
+                                cookie.set(`${cookieToset.name}`, JSON.stringify(cookieToset))
                                 history.push("/Calendar")
                             } else {
                                 // seterrorMessage("Unauthorized Access")

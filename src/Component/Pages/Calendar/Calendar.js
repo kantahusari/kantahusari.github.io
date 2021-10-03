@@ -13,10 +13,14 @@ export default function Calendar() {
     localStorage.clear()
     const cookie = new Cookies()
     const all = cookie.getAll()
+
+
+
     const [pagereloader, setpagereloader] = useState(false)
     const [changeStatus, setchangeStatus] = useState(false)
     const [navStatus, setnavStatus] = useState(false)
     const [flush, setflush] = useState("")
+    const [authValues, setauthValues] = useState("")
 
     const months = [
         "January",
@@ -206,8 +210,8 @@ export default function Calendar() {
                                         <td style={{ display: "none" }}>{item.status}</td>
                                         <td className="calendarTD">{item.topic}</td>
                                         <td className="calendarTD">{item.day}</td>
-                                        <td className="calendarTD">{`${item.fromhour}:${item.fromminute}`}</td>
-                                        <td className="calendarTD">{`${item.tohour}:${item.tominute}`}</td>
+                                        <td className="calendarTD">{`${item.fromhour} : ${item.fromminute}`}</td>
+                                        <td className="calendarTD">{`${item.tohour} : ${item.tominute}`}</td>
                                         <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
                                         <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
                                     </tr>
@@ -221,8 +225,13 @@ export default function Calendar() {
     }
 
     function logout() {
-        cookie.remove("admin")
-        history.push("/")
+        const request = {
+            authstatus: false
+        }
+        axios.post("https://appzero0.herokuapp.com/user/logout", request).then(res => {
+            cookie.remove(authValues.name)
+            history.push(res.data)
+        })
     }
 
     function show() {
@@ -317,7 +326,7 @@ export default function Calendar() {
                             }
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         )
@@ -331,24 +340,51 @@ export default function Calendar() {
         setTimeout(() => {
             setchangeStatus(!changeStatus)
         }, 650);
-        if (all.hasOwnProperty("admin")) {
-            setpagereloader(true);
+        if (all.hasOwnProperty(authValues.name)) {
+            if (cookie.get(authValues.name).value === authValues.value) {
+                setpagereloader(true);
+            } else {
+                setpagereloader(false);
+            }
         } else {
             setpagereloader(false);
-
         }
     }
-    //this will work as component mounting tool
+
+    //using this call in order to mount the componenets and to chech the status everytimne the depedency changes.
     useEffect(() => {
         const request = {
             year: currentYear,
             month: currentMonth,
         }
-        axios.post("https://appzero0.herokuapp.com/admin/find", request)
-            .then(res => {
-                const monthData = res.data
-                setmonthdata([...monthData])
-            })
+        let one = "https://appzero0.herokuapp.com/user/login/checkstatus"
+        let two = "https://appzero0.herokuapp.com/admin/find"
+
+        const requestONE = axios.post(one, "")
+        const requestTwo = axios.post(two, request)
+
+        axios.all([requestONE, requestTwo]).then(axios.spread((...responses) => {
+            //this is the response to the first call
+            const responseOne = responses[0]
+            const authstatus = responseOne.data
+            setauthValues(authstatus)
+
+
+            //this is the response to the first call
+            const responseTwo = responses[1]
+            const monthData = responseTwo.data
+            setmonthdata([...monthData])
+
+        })).catch(errors => {
+            console.log(errors)
+        })
+
+        //-----------------------
+        // axios.post("https://appzero0.herokuapp.com/admin/find", request)
+        //     .then(res => {
+        //         const monthData = res.data
+        //         setmonthdata([...monthData])
+        //     })
 
     }, [navStatus])
 
