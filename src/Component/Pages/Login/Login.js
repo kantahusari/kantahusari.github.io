@@ -39,7 +39,11 @@ export default function Login() {
                                     "status": res.data.status
                                 }
                                 // cookie.set(`${cookieToset.name}`, cookieToset.value)
-                                cookie.set(`${cookieToset.name}`, cookieToset)
+                                cookie.set(`${cookieToset.name}`, {
+                                    "value": cookieToset.value,
+                                    "name": cookieToset.name,
+                                    "status": cookieToset.status
+                                })
                                 history.push("/Calendar")
                             } else {
                                 // seterrorMessage("Unauthorized Access")
