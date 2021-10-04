@@ -6,17 +6,7 @@ import moment from "moment"
 import axios from "axios"
 
 export default function AddEvent() {
-    /*
 
-    day
-    fromminute
-    tohour
-    tominute
-    notes
-    description
-    priority
-    status
-*/
     const [topic, settopic] = useState("")
     const [year, setyear] = useState(localStorage.getItem("year"))
     const [month, setmonth] = useState(localStorage.getItem("month"))
