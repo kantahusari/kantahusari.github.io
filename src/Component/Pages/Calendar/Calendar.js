@@ -357,38 +357,20 @@ export default function Calendar() {
     }
 
     //using this call in order to mount the componenets and to chech the status everytimne the depedency changes.
+    //update events table here
     useEffect(() => {
         const request = {
             year: currentYear,
             month: currentMonth,
         }
-
-        // let one = "https://appzero0.herokuapp.com/user/login/checkstatus"
-        // let two = "https://appzero0.herokuapp.com/admin/find"
-
-        //  axios.all([axios.post(one, ""), axios.post(two, request)]).then(axios.spread((res1,res2) => {
-        //     const responseOne = res1
-        //     const authstatus = responseOne.data
-        //     setauthValues(authstatus)
-        //     console.log("this is auth data: ")
-        //     console.log(authValues)
-
-        //     const responseTwo = res2
-        //     const monthData = responseTwo.data
-        //     setmonthdata([...monthData])
-        //     console.log("this is month data: ")
-        //     console.log(monthdata)
-
-        // })).catch(errors => {
-        //     console.log(errors)
-        // })
-
-        //-----------------------
         axios.post("https://appzero0.herokuapp.com/admin/find", request)
             .then(res => {
                 const monthData = res.data
                 setmonthdata([...monthData])
             })
+    }, [navStatus])
+    //update authintication status here
+    useEffect(() => {
         axios.post("https://appzero0.herokuapp.com/user/login/checkstatus", "")
             .then(res => {
                 const authData = res.data
