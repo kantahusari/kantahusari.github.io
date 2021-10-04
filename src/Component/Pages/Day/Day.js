@@ -10,7 +10,6 @@ import AddEvent from "./AddEvent"
 
 export default function Day() {
     const history = useHistory()
-    localStorage.clear()
     const cookie = new Cookies()
     const all = cookie.getAll()
 
