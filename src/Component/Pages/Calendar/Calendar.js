@@ -347,7 +347,17 @@ export default function Calendar() {
                 console.log("cookie value match")
                 setpagereloader(true);
             } else {
-                console.log("cookie value does not match")
+                console.log("cookie value does not match ---------------")
+                
+                console.log("this is Auth values value")
+                console.log(authValues)
+                
+                console.log("this is cookie value")
+                console.log(cookie.get("admin").value)
+
+                console.log("this is auth value")
+                console.log(authValues.value)
+
                 setpagereloader(false);
             }
         } else {
@@ -369,6 +379,8 @@ export default function Calendar() {
                 setmonthdata([...monthData])
             })
     }, [navStatus])
+    
+    
     //update authintication status here
     useEffect(() => {
         axios.post("https://appzero0.herokuapp.com/user/login/checkstatus", "")
