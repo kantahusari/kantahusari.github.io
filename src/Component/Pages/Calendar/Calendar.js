@@ -21,8 +21,8 @@ export default function Calendar() {
 
     const [pagereloader, setpagereloader] = useState(false)
     const [changeStatus, setchangeStatus] = useState(false)
-    const [navStatus, setnavStatus] = useState(false)
     const [flush, setflush] = useState("")
+    const [navStatus, setnavStatus] = useState(false)
     const [authValues, setauthValues] = useState("")
 
 
@@ -335,13 +335,6 @@ export default function Calendar() {
             </div>
         )
     }
-
-
-
-
-
-
-
 
     function hide() {
         return (<div>Acces Forbidden</div>)
