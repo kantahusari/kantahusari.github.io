@@ -102,7 +102,6 @@ export default function Calendar() {
         localStorage.setItem('month', dayinfo.month);
         localStorage.setItem('year', dayinfo.year);
         history.push("/Calendar/Day")
-        history.push("/Calendar/Day")
     }
 
 
