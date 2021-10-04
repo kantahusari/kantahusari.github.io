@@ -343,20 +343,31 @@ export default function Calendar() {
         if (all.hasOwnProperty("admin")) {
             console.log("there is a cookie")
             console.log(cookie.get("admin"))
-            if (cookie.get("admin").value === authValues.value) {
-                console.log("cookie value match")
-                setpagereloader(true);
-            } else {
-                console.log("cookie value does not match ---------------")
-                
-                console.log("this is Auth values value")
+            if (cookie.get("admin").value === authValues.accessToken) {
+                console.log("MATCH ---------------")
+                console.log("Auth api value")
                 console.log(authValues)
                 
-                console.log("this is cookie value")
+                console.log("Cookie value")
                 console.log(cookie.get("admin").value)
 
                 console.log("this is auth value")
                 console.log(authValues.value)
+                setpagereloader(true);
+            } else {
+                console.log("NO MATCH ---------------")
+
+
+
+                console.log("Auth api value")
+                console.log(authValues)
+                
+                console.log("Cookie value")
+                console.log(cookie.get("admin").value)
+
+                console.log("this is auth value")
+                console.log(authValues.value)
+
 
                 setpagereloader(false);
             }
