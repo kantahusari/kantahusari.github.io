@@ -25,7 +25,6 @@ export default function Calendar() {
     const [flush, setflush] = useState("")
     const [authValues, setauthValues] = useState("")
 
-    const [ShowAreaStatus, setShowAreaStatus] = useState("")
 
     const months = [
         "January",
@@ -103,8 +102,7 @@ export default function Calendar() {
         localStorage.setItem('month', dayinfo.month);
         localStorage.setItem('year', dayinfo.year);
         history.push("/Calendar/Day")
-        setShowAreaStatus("ADD_EVENT")
-        // history.push("/Calendar/Day")
+        history.push("/Calendar/Day")
     }
 
 
@@ -238,213 +236,107 @@ export default function Calendar() {
             history.push(res.data)
         })
     }
-    //this is original
-    // function show() {
 
-    //     return (
-    //         <div className="allpage">
-
-    //             <div className="logbar" >
-    //                 <div className="logout"
-    //                     onClick={
-    //                         () => {
-    //                             logout()
-    //                         }
-    //                     }
-    //                 ><h1>Logout</h1></div>
-    //             </div>
-
-    //             <div className="calendarArea">
-
-    //                 <div className="calendarShow">
-    //                     <div className="navigation">
-    //                         <div className="navigationButton"
-    //                             onClick={
-    //                                 () => {
-    //                                     changedate(-1)
-    //                                 }
-    //                             }>{`<`}</div>
-    //                         <p className="navigationDisplay">{`${months[currentMonth]}, ${currentYear}`}<br />{todayInfo}</p>
-    //                         <div className="navigationButton"
-    //                             onClick={
-    //                                 () => {
-    //                                     changedate(1)
-    //                                 }
-    //                             }>{`>`}</div>
-    //                     </div>
-    //                     <table className="calendarTable">
-    //                         <tbody className="calendarTablebody">
-
-    //                             <tr className="calendarTableHead">
-    //                                 <th>Sun</th>
-    //                                 <th>Mon</th>
-    //                                 <th>Tue</th>
-    //                                 <th>Wed</th>
-    //                                 <th>Thu</th>
-    //                                 <th>Fri</th>
-    //                                 <th>Sat</th>
-    //                             </tr>
-
-    //                             <tr className="calendarTableData">
-    //                                 {
-    //                                     renderdaysofthemonth()[0]
-    //                                 }
-    //                             </tr>
-    //                             <tr className="calendarTableData">
-    //                                 {
-    //                                     renderdaysofthemonth()[1]
-    //                                 }
-    //                             </tr>
-    //                             <tr className="calendarTableData">
-    //                                 {
-    //                                     renderdaysofthemonth()[2]
-    //                                 }
-    //                             </tr>
-    //                             <tr className="calendarTableData">
-    //                                 {
-    //                                     renderdaysofthemonth()[3]
-    //                                 }
-    //                             </tr>
-    //                             <tr className="calendarTableData">
-    //                                 {
-    //                                     renderdaysofthemonth()[4]
-    //                                 }
-    //                             </tr>
-    //                             <tr className="calendarTableData">
-    //                                 {
-    //                                     renderdaysofthemonth()[5]
-    //                                 }
-    //                             </tr>
-
-
-    //                         </tbody>
-
-    //                     </table>
-
-
-
-    //                 </div>
-
-    //                 <div className="calendarInformation">
-    //                     <div className="monthinfoare">
-    //                         {
-    //                             renderDayInformation()
-    //                         }
-    //                     </div>
-    //                 </div>
-
-    //             </div>
-    //         </div>
-    //     )
-    // }
-
-
-    //this is test
     function show() {
-        switch (ShowAreaStatus) {
-            case ShowAreaStatus === "" || ShowAreaStatus === "calendar":
-                return (
-                    <div className="allpage">
 
-                        <div className="logbar" >
-                            <div className="logout"
+        return (
+            <div className="allpage">
+
+                <div className="logbar" >
+                    <div className="logout"
+                        onClick={
+                            () => {
+                                logout()
+                            }
+                        }
+                    ><h1>Logout</h1></div>
+                </div>
+
+                <div className="calendarArea">
+
+                    <div className="calendarShow">
+                        <div className="navigation">
+                            <div className="navigationButton"
                                 onClick={
                                     () => {
-                                        logout()
+                                        changedate(-1)
                                     }
-                                }
-                            ><h1>Logout</h1></div>
+                                }>{`<`}</div>
+                            <p className="navigationDisplay">{`${months[currentMonth]}, ${currentYear}`}<br />{todayInfo}</p>
+                            <div className="navigationButton"
+                                onClick={
+                                    () => {
+                                        changedate(1)
+                                    }
+                                }>{`>`}</div>
                         </div>
+                        <table className="calendarTable">
+                            <tbody className="calendarTablebody">
 
-                        <div className="calendarArea">
+                                <tr className="calendarTableHead">
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                    <th>Fri</th>
+                                    <th>Sat</th>
+                                </tr>
 
-                            <div className="calendarShow">
-                                <div className="navigation">
-                                    <div className="navigationButton"
-                                        onClick={
-                                            () => {
-                                                changedate(-1)
-                                            }
-                                        }>{`<`}</div>
-                                    <p className="navigationDisplay">{`${months[currentMonth]}, ${currentYear}`}<br />{todayInfo}</p>
-                                    <div className="navigationButton"
-                                        onClick={
-                                            () => {
-                                                changedate(1)
-                                            }
-                                        }>{`>`}</div>
-                                </div>
-                                <table className="calendarTable">
-                                    <tbody className="calendarTablebody">
-
-                                        <tr className="calendarTableHead">
-                                            <th>Sun</th>
-                                            <th>Mon</th>
-                                            <th>Tue</th>
-                                            <th>Wed</th>
-                                            <th>Thu</th>
-                                            <th>Fri</th>
-                                            <th>Sat</th>
-                                        </tr>
-
-                                        <tr className="calendarTableData">
-                                            {
-                                                renderdaysofthemonth()[0]
-                                            }
-                                        </tr>
-                                        <tr className="calendarTableData">
-                                            {
-                                                renderdaysofthemonth()[1]
-                                            }
-                                        </tr>
-                                        <tr className="calendarTableData">
-                                            {
-                                                renderdaysofthemonth()[2]
-                                            }
-                                        </tr>
-                                        <tr className="calendarTableData">
-                                            {
-                                                renderdaysofthemonth()[3]
-                                            }
-                                        </tr>
-                                        <tr className="calendarTableData">
-                                            {
-                                                renderdaysofthemonth()[4]
-                                            }
-                                        </tr>
-                                        <tr className="calendarTableData">
-                                            {
-                                                renderdaysofthemonth()[5]
-                                            }
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div className="calendarInformation">
-                                <div className="monthinfoare">
+                                <tr className="calendarTableData">
                                     {
-                                        renderDayInformation()
+                                        renderdaysofthemonth()[0]
                                     }
-                                </div>
-                            </div>
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[1]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[2]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[3]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[4]
+                                    }
+                                </tr>
+                                <tr className="calendarTableData">
+                                    {
+                                        renderdaysofthemonth()[5]
+                                    }
+                                </tr>
 
+
+                            </tbody>
+
+                        </table>
+
+
+
+                    </div>
+
+                    <div className="calendarInformation">
+                        <div className="monthinfoare">
+                            {
+                                renderDayInformation()
+                            }
                         </div>
                     </div>
-                )
-                break;
-            case ShowAreaStatus === "ADD_EVENT":
-                return <Day />;
-                break;
-            case ShowAreaStatus === "EDIT_EVENT":
-                return <Edit />;
-                break;
-            default:
-                return null;
-        }
 
+                </div>
+            </div>
+        )
     }
+
+
 
 
 
@@ -470,8 +362,6 @@ export default function Calendar() {
         }
     }
 
-    //using this call in order to mount the componenets and to chech the status everytimne the depedency changes.
-    //update events table here
     useEffect(() => {
         const request = {
             year: currentYear,
@@ -485,7 +375,7 @@ export default function Calendar() {
     }, [navStatus])
 
 
-    //update authintication status here
+
     useEffect(() => {
         axios.post("https://appzero0.herokuapp.com/user/login/checkstatus", "")
             .then(res => {
