@@ -8,9 +8,6 @@ import moment from "moment"
 import axios from "axios"
 
 
-import Day from "../Day/Day"
-import Edit from "../Day/EditEvent"
-
 export default function Calendar() {
     const history = useHistory()
     localStorage.clear()
@@ -345,6 +342,9 @@ export default function Calendar() {
         }, 650);
         if (all.hasOwnProperty("admin")) {
             if (cookie.get("admin").value === authValues[0].accessToken) {
+                console.log(authValues)
+                console.log(authValues[0])
+                console.log(authValues[0].accessToken)
                 setpagereloader(true);
             } else {
                 setpagereloader(false);
@@ -374,6 +374,9 @@ export default function Calendar() {
                 const authData = res.data
                 setauthValues(authData)
             })
+        return () => {
+            setflush({})
+        };
 
     }, [navStatus])
 
