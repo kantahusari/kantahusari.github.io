@@ -171,7 +171,14 @@ export default function Calendar() {
     }
 
     function deleteEvent(item) {
-        console.log(item._id)
+        const request = {
+            _id: item._id
+        }
+        axios.post("https://appzero0.herokuapp.com/admin/deleteEvent", request)
+            .then(res => {
+                history.push(res.data)
+            })
+        // console.log(item._id)
     }
 
     function editEvent(item) {
