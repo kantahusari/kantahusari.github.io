@@ -176,7 +176,7 @@ export default function Calendar() {
         }
         axios.post("https://appzero0.herokuapp.com/admin/deleteEvent", request)
             .then(res => {
-                history.push(res.data)
+                setnavStatus(!navStatus)
             })
         // console.log(item._id)
     }
@@ -349,8 +349,6 @@ export default function Calendar() {
         }, 650);
         if (all.hasOwnProperty("admin")) {
             if (cookie.get("admin").value === authValues.accessToken) {
-                console.log(authValues)
-                console.log(authValues.accessToken)
                 setpagereloader(true);
             } else {
                 setpagereloader(false);
