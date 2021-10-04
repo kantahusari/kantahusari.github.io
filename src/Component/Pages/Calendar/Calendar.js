@@ -341,10 +341,9 @@ export default function Calendar() {
             setchangeStatus(!changeStatus)
         }, 650);
         if (all.hasOwnProperty("admin")) {
-            if (cookie.get("admin").value === authValues[0].accessToken) {
+            if (cookie.get("admin").value === authValues.accessToken) {
                 console.log(authValues)
-                console.log(authValues[0])
-                console.log(authValues[0].accessToken)
+                console.log(authValues.accessToken)
                 setpagereloader(true);
             } else {
                 setpagereloader(false);
@@ -371,7 +370,7 @@ export default function Calendar() {
     useEffect(() => {
         axios.post("https://appzero0.herokuapp.com/user/login/checkstatus", "")
             .then(res => {
-                const authData = res.data
+                const authData = res.data[0]
                 setauthValues(authData)
             })
         return () => {
