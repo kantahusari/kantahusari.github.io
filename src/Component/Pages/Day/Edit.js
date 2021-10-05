@@ -5,10 +5,10 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import moment from "moment"
-import "./Day.css"
-import AddEvent from "./AddEvent"
+import "./Edit.css"
+import EditEvent from "./EditEvent"
 
-export default function Day() {
+export default function Edit() {
     const history = useHistory()
     const cookie = new Cookies()
     const all = cookie.getAll()
@@ -39,6 +39,8 @@ export default function Day() {
         history.push("/Calendar")
     }
 
+
+
     function show() {
         return (
             <div className="daybody">
@@ -56,12 +58,12 @@ export default function Day() {
                 </div>
 
                 <div className="dayinfo">
-                    <h1>{`${months[localStorage.getItem('month')]}`}</h1>
-                    <h1>{`${localStorage.getItem('day')},`}</h1>
-                    <h1>{`${localStorage.getItem('year')}`}</h1>
+                    <h1>{`${months[localStorage.getItem('EventToEdit').month]}`}</h1>
+                    <h1>{`${localStorage.getItem('EventToEdit').day},`}</h1>
+                    <h1>{`${localStorage.getItem('EventToEdit').year}`}</h1>
                 </div>
 
-                <AddEvent />
+                <EditEvent />
 
             </div>
         )
@@ -102,3 +104,4 @@ export default function Day() {
             return null;
     }
 }
+

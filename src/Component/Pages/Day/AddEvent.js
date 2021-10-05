@@ -53,7 +53,6 @@ export default function AddEvent() {
                 if (Number(toHour) === Number(fromHour) && Number(toMinute) <= Number(fromMinute)) {
                     seterror("Time must move forward !!!")
                 } else {
-                        console.log("correct time")
                         const Dayevent = {
                             topic: topic,
                             year: year,
