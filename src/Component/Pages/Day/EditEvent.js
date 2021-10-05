@@ -31,9 +31,6 @@ export default function EditEvent() {
     const [error, seterror] = useState("")
 
 
-    // console.log(itemToChange)
-    // console.log(itemToChange.topic)
-
 
 
     function renderHours() {
@@ -82,8 +79,7 @@ export default function EditEvent() {
                         priority: priority,
                         status: status,
                     }
-                    console.log(Dayevent)
-                    // send the request !!!
+
                     axios.post("https://appzero0.herokuapp.com/admin/editEvent", Dayevent).then(res => {
                         if (res.data.errors === null || res.data.errors === undefined) {
                             settopic("")
