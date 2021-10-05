@@ -11,25 +11,26 @@ import "./EditEvent.css"
 
 export default function EditEvent() {
     const history = useHistory()
-    const [_id, set_id] = useState(localStorage.getItem('EventToEdit')._id)
-    const [topic, settopic] = useState(localStorage.getItem('EventToEdit').topic)
-    const [year, setyear] = useState(localStorage.getItem('EventToEdit').year)
-    const [month, setmonth] = useState(localStorage.getItem('EventToEdit').month)
-    const [day, setday] = useState(localStorage.getItem('EventToEdit').day)
-    const [fromHour, setfromHour] = useState(localStorage.getItem('EventToEdit').fromhour)
-    const [fromMinute, setfromMinute] = useState(localStorage.getItem('EventToEdit').fromminute)
-    const [toHour, settoHour] = useState(localStorage.getItem('EventToEdit').tohour)
-    const [toMinute, settoMinute] = useState(localStorage.getItem('EventToEdit').tominute)
-    const [notes, setnotes] = useState(localStorage.getItem('EventToEdit').notes)
-    const [description, setdescription] = useState(localStorage.getItem('EventToEdit').description)
-    const [priority, setpriority] = useState(localStorage.getItem('EventToEdit').priority)
-    const [status, setstatus] = useState(localStorage.getItem('EventToEdit').status)
+    const itemToChange = localStorage.getItem('EventToEdit')
+    const [_id, set_id] = useState(itemToChange._id)
+    const [topic, settopic] = useState(itemToChange.topic)
+    const [year, setyear] = useState(itemToChange.year)
+    const [month, setmonth] = useState(itemToChange.month)
+    const [day, setday] = useState(itemToChange.day)
+    const [fromHour, setfromHour] = useState(itemToChange.fromhour)
+    const [fromMinute, setfromMinute] = useState(itemToChange.fromminute)
+    const [toHour, settoHour] = useState(itemToChange.tohour)
+    const [toMinute, settoMinute] = useState(itemToChange.tominute)
+    const [notes, setnotes] = useState(itemToChange.notes)
+    const [description, setdescription] = useState(itemToChange.description)
+    const [priority, setpriority] = useState(itemToChange.priority)
+    const [status, setstatus] = useState(itemToChange.status)
 
     const [error, seterror] = useState("")
-    
-    
-    console.log(localStorage.getItem('EventToEdit'))
-    console.log(localStorage.getItem('EventToEdit').topic)
+
+
+    console.log(itemToChange)
+    console.log(itemToChange.topic)
 
 
 
@@ -119,7 +120,7 @@ export default function EditEvent() {
 
     return (
         <div className="addEvent">
-            <input className="addEventInput" placeholder={topic} value={topic} onChange={(event) => { event.preventDefault(); settopic(event.target.value) }}></input><br />
+            <input className="addEventInput" placeholder={itemToChange.topic} value={topic} onChange={(event) => { event.preventDefault(); settopic(event.target.value) }}></input><br />
             <br />
             <label className="addEventLabelTimeFrame">From: </label><br />
             <label className="addEventLabel">Hour</label>
@@ -154,9 +155,9 @@ export default function EditEvent() {
                 }
             </select><br />
 
-            <textarea className="addEventInputTextArea" placeholder={notes} value={notes} onChange={(event) => { event.preventDefault(); setnotes(event.target.value) }}></textarea ><br />
+            <textarea className="addEventInputTextArea" placeholder={itemToChange.notes} value={notes} onChange={(event) => { event.preventDefault(); setnotes(event.target.value) }}></textarea ><br />
 
-            <textarea className="addEventInputTextArea" placeholder={description} value={description} onChange={(event) => { event.preventDefault(); setdescription(event.target.value) }}></textarea ><br />
+            <textarea className="addEventInputTextArea" placeholder={itemToChange.description} value={description} onChange={(event) => { event.preventDefault(); setdescription(event.target.value) }}></textarea ><br />
 
             <label className="addEventLabel">Priority: </label>
             <select className="addEventInputTime" value={priority} onChange={(event) => { event.preventDefault(); setpriority(event.target.value) }}>
