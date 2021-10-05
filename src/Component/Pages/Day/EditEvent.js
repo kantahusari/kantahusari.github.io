@@ -31,8 +31,8 @@ export default function EditEvent() {
     const [error, seterror] = useState("")
 
 
-    console.log(itemToChange)
-    console.log(itemToChange.topic)
+    // console.log(itemToChange)
+    // console.log(itemToChange.topic)
 
 
 
@@ -82,6 +82,7 @@ export default function EditEvent() {
                         priority: priority,
                         status: status,
                     }
+                    console.log(Dayevent)
                     // send the request !!!
                     axios.post("https://appzero0.herokuapp.com/admin/editEvent", Dayevent).then(res => {
                         if (res.data.errors === null || res.data.errors === undefined) {
@@ -122,7 +123,7 @@ export default function EditEvent() {
 
     return (
         <div className="addEvent">
-            <input className="addEventInput" placeholder={itemToChange.topic} value={topic} onChange={(event) => { event.preventDefault(); settopic(event.target.value) }}></input><br />
+            <input className="addEventInput" placeholder="Topic" value={topic} onChange={(event) => { event.preventDefault(); settopic(event.target.value) }}></input><br />
             <br />
             <label className="addEventLabelTimeFrame">From: </label><br />
             <label className="addEventLabel">Hour</label>
@@ -157,9 +158,9 @@ export default function EditEvent() {
                 }
             </select><br />
 
-            <textarea className="addEventInputTextArea" placeholder={itemToChange.notes} value={notes} onChange={(event) => { event.preventDefault(); setnotes(event.target.value) }}></textarea ><br />
+            <textarea className="addEventInputTextArea" placeholder="Notes" value={notes} onChange={(event) => { event.preventDefault(); setnotes(event.target.value) }}></textarea ><br />
 
-            <textarea className="addEventInputTextArea" placeholder={itemToChange.description} value={description} onChange={(event) => { event.preventDefault(); setdescription(event.target.value) }}></textarea ><br />
+            <textarea className="addEventInputTextArea" placeholder="Description" value={description} onChange={(event) => { event.preventDefault(); setdescription(event.target.value) }}></textarea ><br />
 
             <label className="addEventLabel">Priority: </label>
             <select className="addEventInputTime" value={priority} onChange={(event) => { event.preventDefault(); setpriority(event.target.value) }}>
