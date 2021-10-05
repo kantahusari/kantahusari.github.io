@@ -42,6 +42,7 @@ export default function Edit() {
 
 
     function show() {
+        const eventToEdit=JSON.parse(localStorage.getItem('EventToEdit'))
         return (
             <div className="daybody">
 
@@ -58,9 +59,9 @@ export default function Edit() {
                 </div>
 
                 <div className="dayinfo">
-                    <h1>{`${months[localStorage.getItem('EventToEdit').month]}`}</h1>
-                    <h1>{`${localStorage.getItem('EventToEdit').day},`}</h1>
-                    <h1>{`${localStorage.getItem('EventToEdit').year}`}</h1>
+                    <h1>{`${months[eventToEdit.month]}`}</h1>
+                    <h1>{`${eventToEdit.day},`}</h1>
+                    <h1>{`${eventToEdit.year}`}</h1>
                 </div>
 
                 <EditEvent />

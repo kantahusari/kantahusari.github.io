@@ -11,7 +11,9 @@ import "./EditEvent.css"
 
 export default function EditEvent() {
     const history = useHistory()
-    const itemToChange = localStorage.getItem('EventToEdit')
+
+    const itemToChange = JSON.parse(localStorage.getItem('EventToEdit'))
+
     const [_id, set_id] = useState(itemToChange._id)
     const [topic, settopic] = useState(itemToChange.topic)
     const [year, setyear] = useState(itemToChange.year)

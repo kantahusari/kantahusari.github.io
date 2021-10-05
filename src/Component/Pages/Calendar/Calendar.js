@@ -183,7 +183,7 @@ export default function Calendar() {
 
     function editEvent(item) {
         // console.log(item._id)
-        localStorage.setItem("EventToEdit", item)
+        localStorage.setItem("EventToEdit", JSON.stringify(item))
         history.push("/Calendar/Edit")
     }
 
