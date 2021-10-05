@@ -26,6 +26,12 @@ export default function EditEvent() {
     const [status, setstatus] = useState(localStorage.getItem('EventToEdit').status)
 
     const [error, seterror] = useState("")
+    
+    
+    console.log(localStorage.getItem('EventToEdit'))
+    console.log(localStorage.getItem('EventToEdit').topic)
+
+
 
     function renderHours() {
         var hours = []
@@ -113,7 +119,7 @@ export default function EditEvent() {
 
     return (
         <div className="addEvent">
-            <input className="addEventInput" placeholder="Topic" value={topic} onChange={(event) => { event.preventDefault(); settopic(event.target.value) }}></input><br />
+            <input className="addEventInput" placeholder={topic} value={topic} onChange={(event) => { event.preventDefault(); settopic(event.target.value) }}></input><br />
             <br />
             <label className="addEventLabelTimeFrame">From: </label><br />
             <label className="addEventLabel">Hour</label>
@@ -148,9 +154,9 @@ export default function EditEvent() {
                 }
             </select><br />
 
-            <textarea className="addEventInputTextArea" placeholder="Notes" value={notes} onChange={(event) => { event.preventDefault(); setnotes(event.target.value) }}></textarea ><br />
+            <textarea className="addEventInputTextArea" placeholder={notes} value={notes} onChange={(event) => { event.preventDefault(); setnotes(event.target.value) }}></textarea ><br />
 
-            <textarea className="addEventInputTextArea" placeholder="Description" value={description} onChange={(event) => { event.preventDefault(); setdescription(event.target.value) }}></textarea ><br />
+            <textarea className="addEventInputTextArea" placeholder={description} value={description} onChange={(event) => { event.preventDefault(); setdescription(event.target.value) }}></textarea ><br />
 
             <label className="addEventLabel">Priority: </label>
             <select className="addEventInputTime" value={priority} onChange={(event) => { event.preventDefault(); setpriority(event.target.value) }}>
