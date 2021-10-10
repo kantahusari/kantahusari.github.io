@@ -1,9 +1,10 @@
 .EventShowArea {
-  text-align: center;
+  width: 75%;
   margin-top: 50px;
 }
 
 .fieldSet {
+  width: 100%;
   background-color: #4c6faf00;
   margin: 0;
   padding: 0;
@@ -27,11 +28,13 @@
 .label1 {
   float: left;
   margin-left: 50px;
+  color:white;
 }
 
 .label2 {
   float: left;
   margin-left: 50px;
+  color:white;
 }
 
 .LabelText {
@@ -39,6 +42,5 @@
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-
   background-color: #4c6faf00;
 }

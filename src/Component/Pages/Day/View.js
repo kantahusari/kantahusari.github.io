@@ -73,47 +73,47 @@ export default function View() {
 
                 <div className="EventShowArea">
 
-                    <fieldset class="fieldSet">
-                        <legend class="legend">Topic</legend>
-                        <h3 class="Text">
+                    <fieldset className="fieldSet">
+                        <legend className="legend">Topic</legend>
+                        <h3 className="Text">
                             {eventToView.topic}
                         </h3>
                     </fieldset>
 
-                    <fieldset class="fieldSet">
-                        <legend class="legend">Time</legend>
-                        <div class="label1">
-                            <label >From:</label><h1 class="LabelText">{`${eventToView.fromhour}:${eventToView.fromminute}`}</h1>
+                    <fieldset className="fieldSet">
+                        <legend className="legend">Time</legend>
+                        <div className="label1">
+                            <label >From:</label><h1 className="LabelText">{`${eventToView.fromhour}:${eventToView.fromminute}`}</h1>
                         </div>
-                        <div class="label2">
-                            <label >To:</label><h1 class="LabelText">{`${eventToView.tohour}:${eventToView.tominute}`}</h1>
+                        <div className="label2">
+                            <label >To:</label><h1 className="LabelText">{`${eventToView.tohour}:${eventToView.tominute}`}</h1>
                         </div>
                     </fieldset>
 
-                    <fieldset class="fieldSet">
-                        <legend class="legend">Notes</legend>
-                        <h3 class="Text">
+                    <fieldset className="fieldSet">
+                        <legend className="legend">Notes</legend>
+                        <h3 className="Text">
                             {eventToView.notes}
                         </h3>
                     </fieldset>
 
-                    <fieldset class="fieldSet">
-                        <legend class="legend">Description</legend>
-                        <h3 class="Text">
+                    <fieldset className="fieldSet">
+                        <legend className="legend">Description</legend>
+                        <h3 className="Text">
                             {eventToView.description}
                         </h3>
                     </fieldset>
 
-                    <fieldset class="fieldSet">
-                        <legend class="legend">Priority</legend>
-                        <h3 class="Text">
+                    <fieldset className="fieldSet">
+                        <legend className="legend">Priority</legend>
+                        <h3 className="Text">
                             {priority[eventToView.priority]}
                         </h3>
                     </fieldset>
 
-                    <fieldset class="fieldSet">
-                        <legend class="legend">Status</legend>
-                        <h3 class="Text">
+                    <fieldset className="fieldSet">
+                        <legend className="legend">Status</legend>
+                        <h3 className="Text">
                             {status[eventToView.status]}
                         </h3>
                     </fieldset>
