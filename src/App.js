@@ -24,6 +24,7 @@ import Login from "./Component/Pages/Login/Login"
 import Calendar from "./Component/Pages/Calendar/Calendar"
 import Day from "./Component/Pages/Day/Day"
 import Edit from "./Component/Pages/Day/Edit"
+import View from "./Component/Pages/Day/View"
 import Cookies from 'universal-cookie';
 import axios from 'axios'
 
@@ -40,6 +41,7 @@ export default function App() {
         <Route exact path='/Calendar' component={Calendar} />
         <Route exact path='/Calendar/Day' component={Day} />
         <Route exact path='/Calendar/Edit' component={Edit} />
+        <Route exact path='/Calendar/View' component={View} />
         <Route exact path='/Login' component={Login} />
         <Redirect to="/" />
       </Switch>

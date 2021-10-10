@@ -1,0 +1,44 @@
+.EventShowArea {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.fieldSet {
+  background-color: #4c6faf00;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.legend {
+  color: #216fb8;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
+}
+.Text {
+  color: #216fb8;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 15px;
+  background-color: #4c6faf00;
+}
+
+.label1 {
+  float: left;
+  margin-left: 50px;
+}
+
+.label2 {
+  float: left;
+  margin-left: 50px;
+}
+
+.LabelText {
+  color: #216fb8;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: #4c6faf00;
+}

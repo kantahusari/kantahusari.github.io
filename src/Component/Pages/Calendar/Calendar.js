@@ -187,6 +187,12 @@ export default function Calendar() {
         history.push("/Calendar/Edit")
     }
 
+    function viewEvent(item) {
+
+        localStorage.setItem("EventToView", JSON.stringify(item))
+        history.push("/Calendar/View")
+    }
+
     function renderDayInformation() {
 
         if (monthdata.length === 0) {
@@ -203,6 +209,7 @@ export default function Calendar() {
                             <th>Day</th>
                             <th>From</th>
                             <th>To</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -222,6 +229,7 @@ export default function Calendar() {
                                         <td className="calendarTD">{`${item.tohour} : ${item.tominute}`}</td>
                                         <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
                                         <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
+                                        <td className="calendarTD"><button className="calendarButtonView" onClick={() => viewEvent(item)}>View</button></td>
                                     </tr>
                             )
                         }

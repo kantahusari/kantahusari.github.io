@@ -147,6 +147,16 @@
   color: white;
   background-color: #4c6faf;
 }
+.calendarButtonView {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  background-color: #63af4c;
+}
 .calendarButtonDelete {
   width: 100%;
   height: 100%;
