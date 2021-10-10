@@ -1,3 +1,6 @@
+.dayview {
+  text-align: center;
+}
 .EventShowArea {
   width: 75%;
   margin-top: 50px;
@@ -28,13 +31,13 @@
 .label1 {
   float: left;
   margin-left: 50px;
-  color:white;
+  color: white;
 }
 
 .label2 {
   float: left;
   margin-left: 50px;
-  color:white;
+  color: white;
 }
 
 .LabelText {
@@ -43,4 +46,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #4c6faf00;
+}
+.timeLabel {
+  color: white;
 }

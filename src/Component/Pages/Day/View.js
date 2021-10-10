@@ -51,7 +51,7 @@ export default function View() {
     function show() {
         const eventToView = JSON.parse(localStorage.getItem('EventToView'))
         return (
-            <div className="daybody">
+            <div className="daybody dayview">
 
                 <div className="logbar" >
                     <div className="logout"
@@ -83,10 +83,10 @@ export default function View() {
                     <fieldset className="fieldSet">
                         <legend className="legend">Time</legend>
                         <div className="label1">
-                            <label >From:</label><h1 className="LabelText">{`${eventToView.fromhour}:${eventToView.fromminute}`}</h1>
+                            <label className="timeLabel">From:</label><h1 className="LabelText">{`${eventToView.fromhour}:${eventToView.fromminute}`}</h1>
                         </div>
                         <div className="label2">
-                            <label >To:</label><h1 className="LabelText">{`${eventToView.tohour}:${eventToView.tominute}`}</h1>
+                            <label className="timeLabel">To:</label><h1 className="LabelText">{`${eventToView.tohour}:${eventToView.tominute}`}</h1>
                         </div>
                     </fieldset>
 
