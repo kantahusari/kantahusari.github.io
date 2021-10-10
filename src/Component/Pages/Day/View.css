@@ -2,6 +2,7 @@
   text-align: center;
 }
 .EventShowArea {
+  margin: auto;
   width: 75%;
   margin-top: 50px;
 }
@@ -17,7 +18,7 @@
   color: #216fb8;
   padding-left: 15px;
   padding-right: 15px;
-  margin: 0;
+  margin-left: 50px;
 }
 .Text {
   color: #216fb8;
