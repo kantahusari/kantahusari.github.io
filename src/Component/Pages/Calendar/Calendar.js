@@ -216,21 +216,40 @@ export default function Calendar() {
                         {
                             monthdata.map(
                                 item =>
-                                    <tr key={item._id}>
-                                        <td style={{ display: "none" }}>{item.year}</td>
-                                        <td style={{ display: "none" }}>{item.month}</td>
-                                        <td style={{ display: "none" }}>{item.notes}</td>
-                                        <td style={{ display: "none" }}>{item.description}</td>
-                                        <td style={{ display: "none" }}>{item.priority}</td>
-                                        <td style={{ display: "none" }}>{item.status}</td>
-                                        <td className="calendarTD">{item.topic}</td>
-                                        <td className="calendarTD">{item.day}</td>
-                                        <td className="calendarTD">{`${item.fromhour} : ${item.fromminute}`}</td>
-                                        <td className="calendarTD">{`${item.tohour} : ${item.tominute}`}</td>
-                                        <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
-                                        <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
-                                        <td className="calendarTD"><button className="calendarButtonView" onClick={() => viewEvent(item)}>View</button></td>
-                                    </tr>
+                                    //status == pending -> all functions
+                                    //status == complete -> only view and delete
+                                    item.status === 0 ?
+                                        <tr key={item._id}>
+                                            <td style={{ display: "none" }}>{item.year}</td>
+                                            <td style={{ display: "none" }}>{item.month}</td>
+                                            <td style={{ display: "none" }}>{item.notes}</td>
+                                            <td style={{ display: "none" }}>{item.description}</td>
+                                            <td style={{ display: "none" }}>{item.priority}</td>
+                                            <td style={{ display: "none" }}>{item.status}</td>
+                                            <td className="calendarTD" style={{ backgroundColor: "#f59042",color:"white" }}>{item.topic}</td>
+                                            <td className="calendarTD">{item.day}</td>
+                                            <td className="calendarTD">{`${item.fromhour} : ${item.fromminute}`}</td>
+                                            <td className="calendarTD">{`${item.tohour} : ${item.tominute}`}</td>
+                                            <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
+                                            <td className="calendarTD"><button className="calendarButtonEdit" onClick={() => editEvent(item)}>Edit</button></td>
+                                            <td className="calendarTD"><button className="calendarButtonView" onClick={() => viewEvent(item)}>View</button></td>
+                                        </tr>
+                                        :
+                                        <tr key={item._id}>
+                                            <td style={{ display: "none" }}>{item.year}</td>
+                                            <td style={{ display: "none" }}>{item.month}</td>
+                                            <td style={{ display: "none" }}>{item.notes}</td>
+                                            <td style={{ display: "none" }}>{item.description}</td>
+                                            <td style={{ display: "none" }}>{item.priority}</td>
+                                            <td style={{ display: "none" }}>{item.status}</td>
+                                            <td className="calendarTD" style={{ backgroundColor: "#42c5f5",color:"white" }}>{item.topic}</td>
+                                            <td className="calendarTD">{item.day}</td>
+                                            <td className="calendarTD">{`${item.fromhour} : ${item.fromminute}`}</td>
+                                            <td className="calendarTD">{`${item.tohour} : ${item.tominute}`}</td>
+                                            <td className="calendarTD"><button className="calendarButtonDelete" onClick={() => deleteEvent(item)}>Delete</button></td>
+                                            <td className="calendarTD"></td>
+                                            <td className="calendarTD"><button className="calendarButtonView" onClick={() => viewEvent(item)}>View</button></td>
+                                        </tr>
                             )
                         }
                     </tbody>
