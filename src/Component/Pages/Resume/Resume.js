@@ -91,6 +91,7 @@ export default function Resume() {
                                 <dt className="fromto" style={{ fontSize: fromtofontsize, fontStyle: "italic", color: "#364e74" }}>January 2020 - Present</dt>
                             </ul>
                             <br />
+                            <br />
                             <ul>
                                 <li style={{ fontSize: fromtofontsize }}>Developing Full Stack web applications</li>
                                 <li style={{ fontSize: fromtofontsize }}>Defining the structure and requirements of the project.</li>
@@ -110,6 +111,7 @@ export default function Resume() {
                                 <dt className="fromto" style={{ fontSize: fromtofontsize, fontStyle: "italic", color: "#364e74" }}>June 2019 - August 2019</dt>
                             </ul>
                             <br />
+                            <br />
                             <ul>
                                 <li style={{ fontSize: fromtofontsize }}>Coordinated four projects of 15K budget each.</li>
                                 <li style={{ fontSize: fromtofontsize }}>Updated project's SQL database.</li>
@@ -126,6 +128,7 @@ export default function Resume() {
                                 <dt style={{ width: iconsize, height: iconsize }} className="date"><img src={Calendar} style={{ width: iconsize, height: iconsize }}></img></dt>
                                 <dt className="fromto" style={{ fontSize: fromtofontsize, fontStyle: "italic", color: "#364e74" }}>February 2017 – August 2018</dt>
                             </ul>
+                            <br />
                             <br />
                             <ul>
                                 <li style={{ fontSize: fromtofontsize }}>Reported to plant manager and performed assistance for controlling and HR.</li>
