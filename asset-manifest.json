@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bf4a9a22.css",
-    "main.js": "/static/js/main.9e265b45.js",
+    "main.css": "/static/css/main.e5dfbea8.css",
+    "main.js": "/static/js/main.b89d7822.js",
     "static/js/787.b368a112.chunk.js": "/static/js/787.b368a112.chunk.js",
     "static/media/Kanta_Husari_2022.pdf": "/static/media/Kanta_Husari_2022.7e2788a2cd1e3d118005.pdf",
     "static/media/imageTwo.png": "/static/media/imageTwo.f9270cb4f4ea71c3def7.png",
@@ -15,12 +15,12 @@
     "static/media/Data.png": "/static/media/Data.320897b697ee18ce124f.png",
     "static/media/linkedinFinal.png": "/static/media/linkedinFinal.984538826b2e020e2e91.png",
     "index.html": "/index.html",
-    "main.bf4a9a22.css.map": "/static/css/main.bf4a9a22.css.map",
-    "main.9e265b45.js.map": "/static/js/main.9e265b45.js.map",
+    "main.e5dfbea8.css.map": "/static/css/main.e5dfbea8.css.map",
+    "main.b89d7822.js.map": "/static/js/main.b89d7822.js.map",
     "787.b368a112.chunk.js.map": "/static/js/787.b368a112.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf4a9a22.css",
-    "static/js/main.9e265b45.js"
+    "static/css/main.e5dfbea8.css",
+    "static/js/main.b89d7822.js"
   ]
 }
