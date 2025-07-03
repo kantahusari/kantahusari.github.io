@@ -1,0 +1,64 @@
+.tileOneCont {
+  overflow: auto;
+}
+.tileImagecontainer {
+  height: fit-content;
+  width: fit-content;
+  /* overflow: auto; */
+  
+  margin-left: auto;
+  margin-right:auto;
+  float: left;
+  animation-fill-mode: both;
+}
+.tileImage {
+  padding: 15px;
+}
+
+
+.tileTextContent {
+  padding: 20px;
+  width: fit-content;
+  float: left;
+  animation-fill-mode: both;
+}
+
+@keyframes fade_out_show {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes to_the_left {
+  0% {
+    transform: translateX(100%) scale(1);
+  }
+  100% {
+    transform: translateX(10%) scale(0.75);
+  }
+}
+
+@keyframes to_the_right {
+  0% {
+    transform: translateX(10%) scale(0.75);
+  }
+  100% {
+    transform: translateX(100%) scale(1);
+  }
+}

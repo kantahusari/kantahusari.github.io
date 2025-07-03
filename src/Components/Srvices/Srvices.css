@@ -1,0 +1,69 @@
+.Services {
+  background-color: #282828;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.Service_Tile {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
+.Service_Frag {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  
+}
+
+.Service_Tile_Title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid magenta; */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.Service_Title_Text {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Service_Tile_Description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.ServiceDescription {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+

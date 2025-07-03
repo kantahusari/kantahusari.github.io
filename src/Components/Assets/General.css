@@ -1,0 +1,13 @@
+.Section_Title{
+    margin-top: 40px;
+    width:80%; 
+    text-align: center; 
+    border-bottom: 2px solid #005a7c; 
+    line-height: 0.1em;
+  }
+  .Section_Title_Span{
+    background:#282828; 
+    padding:0 10px; 
+    white-space: nowrap;
+  }
+  

@@ -1,0 +1,45 @@
+.AboutmeContainer {
+  background-color: #282828;
+  color: white;
+  padding: 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+.aboutMeTitle {
+  width: fit-content;
+  margin: 0 auto;
+}
+.aboutMeText {
+  margin-top: 25px;
+  margin: 0 auto;
+  width: 60%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.DownloadResumeLink {
+  text-decoration: none;
+  color: white;
+}
+.contact_submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width:fit-content;
+  height: 50px;
+  border: 2px solid #005a7c;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #005a7c;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

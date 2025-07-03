@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e5dfbea8.css",
+    "main.js": "/static/js/main.8658c22d.js",
+    "static/js/787.b368a112.chunk.js": "/static/js/787.b368a112.chunk.js",
+    "static/media/imageTwo.png": "/static/media/imageTwo.f9270cb4f4ea71c3def7.png",
+    "static/media/Logo.png": "/static/media/Logo.5da1248a6dc7223bf177.png",
+    "static/media/businessanalysis.jpg": "/static/media/businessanalysis.4b5c99236692ed0c797e.jpg",
+    "static/media/Server.png": "/static/media/Server.8aa5bcd14d9878a280ce.png",
+    "static/media/DevOps.png": "/static/media/DevOps.4e4ddaebe9816fde60f3.png",
+    "static/media/Design.png": "/static/media/Design.06d687971f554f804795.png",
+    "static/media/githubFinal.png": "/static/media/githubFinal.36c817f509e5cedf613f.png",
+    "static/media/Framework.png": "/static/media/Framework.30d9c83ee8221da72e33.png",
+    "static/media/Data.png": "/static/media/Data.320897b697ee18ce124f.png",
+    "static/media/linkedinFinal.png": "/static/media/linkedinFinal.984538826b2e020e2e91.png",
+    "index.html": "/index.html",
+    "main.e5dfbea8.css.map": "/static/css/main.e5dfbea8.css.map",
+    "main.8658c22d.js.map": "/static/js/main.8658c22d.js.map",
+    "787.b368a112.chunk.js.map": "/static/js/787.b368a112.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5dfbea8.css",
+    "static/js/main.8658c22d.js"
+  ]
+}

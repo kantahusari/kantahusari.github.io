@@ -1,0 +1,130 @@
+.Resume {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Resume_Container_Horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1500px;
+  height:600px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+}
+.Resume_Container_Left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  width: 350px;
+  gap: 20px;
+}
+.Resume_Container_Right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  width: 1100px;
+}
+
+.Resume_Container_Vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Resume_Container_Top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 60px;
+  gap: 10px;
+
+  white-space: nowrap;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.Resume_Container_Top::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+.Resume_Container_Top::-webkit-scrollbar-track {
+  background: transparent;
+}
+.Resume_Container_Top::-webkit-scrollbar-thumb {
+  background: #005a7c;
+  border-radius: 15px;
+}
+.Resume_Container_Top::-webkit-scrollbar-thumb:hover {
+  background: #1280a8;
+}
+
+.Resume_Container_Down {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.JobTitle {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #005a7c;
+}
+
+.JobPlace {
+  font-size: x-large;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.JobDate {
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.JobDescription {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.Resume_P {
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+

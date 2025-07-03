@@ -1,0 +1,29 @@
+.Footer_Container {
+  background-color: #282828;
+  color: white;
+  height: fit-content;
+  border-top: 10px solid #005a7c;
+  padding-top: 30px;
+  padding-bottom: 75px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+.FooterTable {
+  margin: 0 auto;
+  width: 50%;
+  background-color: #282828;
+  color: white;
+  border-collapse: collapse;
+}
+.FooterTableData {
+  width: fit-content;
+  height: fit-content;
+  font-style: italic;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.FooterTableRow {
+  width: fit-content;
+  height: fit-content;
+}
